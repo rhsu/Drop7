@@ -1,9 +1,6 @@
 package GameObjects;
 
-import Core.PublicFunctions;
-
 /**
- *
  * @author RHsu
  */
 //Creates a board where the game can be played
@@ -36,6 +33,9 @@ public class Board
 	 */
 	public boolean Insert(int position, int value)
 	{
+System.out.println("here");
+System.out.println("position is: " + position);
+System.out.println("value is: " + value);
 		//calibrated to work with array indexes
 		position--;
 		for (int index = 6; index >= 0; index--)
@@ -44,7 +44,7 @@ public class Board
 			if(current.getType() == Piece.Type.EMPTY)
 			{
 				current.setType(Piece.Type.NEW);
-				current.setValue(PublicFunctions.GetRandomNumber());
+				current.setValue(value);
 				return true;
 			}
 		}
