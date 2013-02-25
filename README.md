@@ -1,4 +1,6 @@
 Drop7
 =====
-The Proejct folder of Drop7
-This is version 0.2
+This if the project directory of Drop7.
+
+This directory contains the following:
+1. Drop7 project: version 0.2
