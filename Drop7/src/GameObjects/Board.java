@@ -33,7 +33,7 @@ public class Board
 	 */
 	public boolean Insert(int position, int value)
 	{
-		if((position <= 0) || (value <= 0))
+		if((position <= 0) || (value <= 0) || (value > 7))
 		{
 			throw new IllegalArgumentException();
 		}
@@ -73,7 +73,7 @@ public class Board
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
-		b.Insert(0,0);
+		b.Insert(1,8);
 		System.out.print(b)
 ;	}
 }
