@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 /**
  * The class to play to play the game.
- *
  */
 public class Game 
 {
