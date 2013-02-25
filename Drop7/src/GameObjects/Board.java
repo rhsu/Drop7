@@ -33,6 +33,10 @@ public class Board
 	 */
 	public boolean Insert(int position, int value)
 	{
+		if(position < 0) 
+		{
+			throw new ArrayIndexOutOfBoundsException();
+		}
 		//subtracting one to calibrate the position to work with array indexes
 		position--;
 		
