@@ -62,8 +62,8 @@ public class Game
 					//dump statistics here
 					System.exit(0);
 				}
-				System.out.println("Inserting piece");
-				System.out.print(board);
+				System.out.println("Inserting piece...");
+				System.out.println(board);
 			}
 			else
 			{

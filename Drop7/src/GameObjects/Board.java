@@ -33,11 +33,9 @@ public class Board
 	 */
 	public boolean Insert(int position, int value)
 	{
-System.out.println("here");
-System.out.println("position is: " + position);
-System.out.println("value is: " + value);
-		//calibrated to work with array indexes
+		//subtracting one to calibrate the position to work with array indexes
 		position--;
+		
 		for (int index = 6; index >= 0; index--)
 		{
 			Piece current = board[index][position];
@@ -56,15 +54,12 @@ System.out.println("value is: " + value);
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
-		String s = "";
 		for (int i = 0; i < 7; i++)
 		{
 			for (int j = 0 ; j < 7; j++)
 			{
-				//s += board[i][j].toString() + " ";
 				builder.append(board[i][j].toString()).append(" ");
 			}
-			//s+= "\n";
 			builder.append("\n");
 		}
 		return builder.toString();
@@ -73,9 +68,6 @@ System.out.println("value is: " + value);
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
-		//System.out.print(b);
-		
-		//b.Insert(2);
 		System.out.print(b)
 ;	}
 }
