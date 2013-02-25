@@ -33,10 +33,11 @@ public class Board
 	 */
 	public boolean Insert(int position, int value)
 	{
-		if(position < 0) 
+		if((position <= 0) || (value <= 0))
 		{
-			throw new ArrayIndexOutOfBoundsException();
+			throw new IllegalArgumentException();
 		}
+		
 		//subtracting one to calibrate the position to work with array indexes
 		position--;
 		
@@ -72,6 +73,7 @@ public class Board
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
+		b.Insert(0,0);
 		System.out.print(b)
 ;	}
 }
