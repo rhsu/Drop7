@@ -14,9 +14,9 @@ public class Piece
 	public static final int EMPTY = 0;
 	//</editor-fold>
 	
-	//<editor-fold defaultstate="collapsed" desc="PRIVATE">
-	private int value;
-	private Type type;
+	//<editor-fold defaultstate="collapsed" desc="PROTECTED">
+	protected int value;
+	protected Type type;
 	//</editor-fold>
 	
 	//<editor-fold defaultstate="collapsed" desc="ACCESSORS">
@@ -63,7 +63,7 @@ public class Piece
 		NEW,
 		EMPTY
 	}
-
+		
 	/**
 	 * Creates a new piece based off of the type
 	 * @param type
@@ -88,7 +88,7 @@ public class Piece
 		}
 	}
 	
-	private Piece(Type type, int value)
+	protected Piece(Type type, int value)
 	{
 		this.type = type;
 		this.value = value;

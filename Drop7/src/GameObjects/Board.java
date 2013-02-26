@@ -6,7 +6,7 @@ package GameObjects;
 //Creates a board where the game can be played
 public class Board
 {
-	//<editor-fold defaultstate="collapsed" desc="PRIVATE">
+	//<editor-fold defaultstate="collapsed" desc="PROTECTED">
 	protected Piece[][] board;
 	//</editor-fold>
 	
