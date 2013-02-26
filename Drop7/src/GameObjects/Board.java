@@ -33,7 +33,7 @@ public class Board
 	 */
 	public boolean Insert(int position, int value)
 	{
-		if((position <= 0) || (value <= 0) || (value > 7))
+		if((position <= 0) || (value > 7))
 		{
 			throw new IllegalArgumentException();
 		}
