@@ -1,6 +1,6 @@
 package GameObjects;
 
-import Core.PublicFunctions;
+import PublicLibrary.PublicFunctions;
 
 /**
  *

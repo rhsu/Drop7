@@ -1,6 +1,6 @@
 package Tests;
 
-import Core.PublicFunctions;
+import PublicLibrary.PublicFunctions;
 import GameObjects.Board;
 import GameObjects.Piece;
 

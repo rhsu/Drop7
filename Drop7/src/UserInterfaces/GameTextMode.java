@@ -1,8 +1,8 @@
 package UserInterfaces;
 
-import Core.PublicFunctions;
 import GameObjects.Game;
 import GameObjects.Piece;
+import PublicLibrary.PublicFunctions;
 import java.util.Scanner;
 
 /**
