@@ -8,8 +8,8 @@ import java.util.Scanner;
  */
 public class Game 
 {
-	//<editor-fold defaultstate="collapsed" desc="PRIVATE">
-	private Board board;
+	//<editor-fold defaultstate="collapsed" desc="protected">
+	protected Board board;
 	private Scanner scanner;
 	private StringBuilder builder;
 	//</editor-fold>

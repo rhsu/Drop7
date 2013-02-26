@@ -53,6 +53,7 @@ public class PublicFunctions
 	/**
 	 * Creates 100 random pieces and plots the frequency of each piece.
 	 */
+	@Deprecated
 	public static void TestRandom()
 	{
 		int[] stats = new int[8];
