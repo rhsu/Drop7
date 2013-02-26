@@ -1,8 +1,8 @@
 package Tests;
 
-import PublicLibrary.PublicFunctions;
 import GameObjects.Board;
 import GameObjects.Piece;
+import PublicLibrary.PublicFunctions;
 
 public class TestBoard extends Board
 {
