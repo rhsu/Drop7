@@ -101,7 +101,7 @@ System.out.println("HERE???");
 				value = MYSTERY_STAGE_2;
 				break;
 			case NEW:
-				value = PublicFunctions.GetRandomNumber();
+				value = PublicFunctions.getRandomNumber();
 				break;
 			case EMPTY:
 				value = EMPTY;
