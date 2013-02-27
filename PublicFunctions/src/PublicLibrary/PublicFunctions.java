@@ -52,6 +52,11 @@ public class PublicFunctions
 		return false;
 	}
 	
+	public static boolean IsValidPosition(int position)
+	{
+		return ((position > 0) && (position < 6));
+	}
+	
 	/**
 	 * Creates 100 random pieces and plots the frequency of each piece.
 	 */
