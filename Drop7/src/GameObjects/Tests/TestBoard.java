@@ -37,8 +37,8 @@ public class TestBoard
 		{
 			b.pieceAt(6, i).setValue(i + 1);
 		}
-		b.pieceAt(6, 6).setType(Piece.Type.EMPTY);
-		b.pieceAt(6, 6).setValue(Piece.EMPTY);
+		b.pieceAt(6, 0).setType(Piece.Type.EMPTY);
+		b.pieceAt(6, 0).setValue(Piece.EMPTY);
 		return b;
 	}
 	

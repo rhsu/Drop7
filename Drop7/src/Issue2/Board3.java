@@ -43,6 +43,7 @@ public class Board3 extends Board
 		//System.out.println("Going left...");
 	}
 	
+	//Only goes left for now
 	public void calculateHorizontalAdjacent(Piece p)
 	{
 		Piece current = p;
@@ -50,28 +51,25 @@ printPiece(current);
 		
 		int ctr = 0;
 		
+System.out.println("Entering while loop");
 		while(current.getVertical() > 0)
 		{
-			ctr++;
-			current = getLeftPiece(current);
+System.out.println("The type is " + current.getType());
 			if(current.getType() == Piece.Type.EMPTY) 
 			{
 				break;
 			}
+			ctr++;
+			current = getLeftPiece(current);
 			printPiece(current);
 		}
 		
 System.out.println("This ran " + ctr + " times");
-		//current = getLeftPiece(current);
-		//System.out.println(current);
-		
-		//current = getLeftPiece(current);
-		//System.out.println(current);
 	}
 	
 	public void testCalculateHorizontalAdjacent()
 	{
-		int j = 6; 
+		int j = 3; 
 		calculateHorizontalAdjacent(pieceAt(6,j)); //6
 	}
 	
