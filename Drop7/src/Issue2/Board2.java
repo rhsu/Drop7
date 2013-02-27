@@ -8,38 +8,32 @@ import GameObjects.Piece;
  */
 public class Board2 extends Board
 {
-	/*
-	 * This constructor will eventually replace board.
-	 */
 	public Board2()
 	{
-		board = new Piece[7][7];
-				
-		for (int i = 0; i < 7; i++)
-		{
-			for (int j = 0; j < 7; j++)
-			{
-				board[i][j] = (i < 6) ? new Piece(Piece.Type.EMPTY, i, j) : new Piece(Piece.Type.NEW, i, j);
-			}
-		}
+		super();
 	}
 	
 	@Override
 	public boolean insert(int position, int value)
 	{
-		if((position <= 0) || (value <= 0))
+		if((position < 1) || (position > 7) || (value > 8))
 		{
 			throw new IllegalArgumentException();
 		}
+		
+		//subtracting one to calibrate the position to work with array indexes
 		position--;
+		
 		for (int index = 6; index >= 0; index--)
 		{
-			Piece current = board[index][position];
+			Piece current = pieceAt(index, position);
 			if(current.getType() == Piece.Type.EMPTY)
-			{
-				current.setType(Piece.Type.NEW);
+			{				
+				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.NEW);	
 				current.setValue(value);
-				CheckLines(current);
+				
+				CalculateHorizontalAdjacent(current);
+				
 				return true;
 			}
 		}
@@ -115,17 +109,8 @@ public class Board2 extends Board
 	
 	public static void main(String[] args)
 	{
-		//Board2 b = new Board2(false);
-		//System.out.println(b);
-		//b.TestCaclculateHorizontalAdjacent();
-		
-		//b.Insert(1,1);
-		//b.Insert(1,2);		
-		//b.Insert(1,3);
-		//b.Insert(1,4);		
-		//b.Insert(1,5);
-		//b.Insert(1,6);
-		
-		//System.out.println(b);
+		Board2 b = new Board2();
+		b.insert(1,1);
+		System.out.println(b);
 	}
 }
