@@ -55,10 +55,17 @@ public class BoardBase
 		{
 			for (int j = 0 ; j < 7; j++)
 			{
-				builder.append(board[i][j].toString()).append(" ");
+				builder.append(PieceAt(i,j).toString()).append(" ");
 			}
 			builder.append("\n");
 		}
 		return builder.toString();
+	}
+	
+	public static void main(String[] args)
+	{
+		Board b = new Board();
+		System.out.println(b);
+		System.out.println(b.PieceAt(6, 6));
 	}
 }

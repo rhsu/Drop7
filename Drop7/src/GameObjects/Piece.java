@@ -35,6 +35,11 @@ public class Piece
 	 */
 	public void setValue(int value)
 	{
+		if(value == 8) 
+		{
+System.out.println("HERE???");
+			this.value =  MYSTERY_STAGE_1;
+		}
 		this.value = value;
 	}
 
@@ -76,31 +81,6 @@ public class Piece
 		EMPTY
 	}
 		
-	/**
-	 * Creates a new piece based off of the type
-	 * @param type
-	 * @deprecated
-	 */
-	public Piece(Type type)
-	{
-		this.type = type;
-		switch(type)
-		{
-			case MYSTERY1:
-				value = MYSTERY_STAGE_1;
-				break;
-			case MYSTERY2:
-				value = MYSTERY_STAGE_2;
-				break;
-			case NEW:
-				value = PublicFunctions.GetRandomNumber();
-				break;
-			case EMPTY:
-				value = EMPTY;
-				break;
-		}
-	}
-	
 	public Piece(Type type, int horizontal, int vertical)
 	{
 		this.type = type;
@@ -120,28 +100,6 @@ public class Piece
 			case EMPTY:
 				value = EMPTY;
 				break;
-		}
-	}
-	
-	@Deprecated
-	public Piece(int value)
-	{
-		this.type = Type.NEW;
-		//this.horizontal = horizontal;
-		//this.vertical = vertical;
-		this.value = value;
-	}
-	
-	@Deprecated
-	public static Piece CreateRandomPiece()
-	{
-		int random = PublicFunctions.GetRandomNumberPiece();
-		switch(random)
-		{
-			case 8:
-				return new Piece(Type.MYSTERY1);
-			default:
-				return new Piece(random);
 		}
 	}
 	
@@ -166,9 +124,7 @@ public class Piece
 
 	public static void main(String[] args)
 	{
-		Piece p1 = new Piece(Type.MYSTERY1);
-		Piece p2 = new Piece(Type.NEW);
-		System.out.println(p1 + " " + p2);
+
 	}
 }
 

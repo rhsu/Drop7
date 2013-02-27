@@ -54,7 +54,7 @@ public class PublicFunctions
 	
 	public static boolean IsValidPosition(int position)
 	{
-		return ((position > 0) && (position < 6));
+		return ((position >= 0) && (position < 7));
 	}
 	
 	/**

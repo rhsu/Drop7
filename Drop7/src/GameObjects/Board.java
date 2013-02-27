@@ -18,7 +18,7 @@ public class Board extends BoardBase
 	 */
 	public boolean Insert(int position, int value)
 	{
-		if((position <= 0) || (position > 7) || (value > 7))
+		if((position < 1) || (position > 7) || (value > 8))
 		{
 			throw new IllegalArgumentException();
 		}
@@ -31,20 +31,26 @@ public class Board extends BoardBase
 			Piece current = board[index][position];
 			if(current.getType() == Piece.Type.EMPTY)
 			{
-				current.setType(Piece.Type.NEW);
+				if(value == 8) 
+				{
+					current.setType(Piece.Type.MYSTERY1);
+				}
+				else 
+				{
+					current.setType(Piece.Type.NEW);
+				}
 				current.setValue(value);
 				return true;
 			}
 		}
-		
 		return false;
 	}
 	
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
-		b.Insert(1,3);
-		System.out.print(b)
+		b.Insert(7,8);
+		System.out.println(b)
 ;	}
 }
 

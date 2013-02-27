@@ -29,10 +29,19 @@ public class GameTextMode extends Game
 		{
 		
 			//Piece RandomPiece = Piece.CreateRandomPiece();
-			int random = PublicFunctions.GetRandomNumberPiece();
+			int random = 8;//PublicFunctions.GetRandomNumberPiece();
 			
 			builder.setLength(0);
-			builder.append("The new piece is ").append(random).append("\n");
+			
+			if(random == 8)
+			{
+				builder.append("The new piece is mystery piece").append("\n");
+			}
+			else
+			{
+				builder.append("The new piece is ").append(random).append("\n");
+			}
+
 			builder.append(board.toString());
 			
 			System.out.println(builder);
