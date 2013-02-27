@@ -29,7 +29,7 @@ public class GameTextMode extends Game
 		while(true)
 		{
 		
-			int random = PublicFunctions.GetRandomNumberPiece();
+			int random = PublicFunctions.getRandomNumberPiece();
 			
 			builder.setLength(0);
 			
@@ -61,7 +61,7 @@ public class GameTextMode extends Game
 				System.out.println("Help here!");
 				//TODO: Should not generate a new piece
 			}
-			else if(PublicFunctions.IsValidPosition(position))
+			else if(PublicFunctions.isValidPosition(position))
 			{
 				if(!board.insert(Integer.parseInt(position), random))
 				{

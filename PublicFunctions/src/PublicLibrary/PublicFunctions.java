@@ -10,12 +10,12 @@ public class PublicFunctions
 	 * 
 	 * @return A random number between 1 and 7
 	 */
-	public static int GetRandomNumber()
+	public static int getRandomNumber()
 	{
 		return (int)(Math.random()*7)+1;
 	}
 	
-	public static int GetRandomNumberPiece()
+	public static int getRandomNumberPiece()
 	{
 		return (int)(Math.random()*8)+1;
 	}
@@ -34,7 +34,7 @@ public class PublicFunctions
 	 * Checks if the user inputted position is valid
 	 * @return True if the position of valid
 	 */
-	public static boolean IsValidPosition(String position)
+	public static boolean isValidPosition(String position)
 	{
 		if(!isInteger(position))
 		{
@@ -50,7 +50,7 @@ public class PublicFunctions
 		return false;
 	}
 	
-	public static boolean IsValidPosition(int position)
+	public static boolean isValidPosition(int position)
 	{
 		return ((position >= 0) && (position < 7));
 	}
@@ -59,7 +59,7 @@ public class PublicFunctions
 	 * Creates 100 random pieces and plots the frequency of each piece.
 	 */
 	@Deprecated
-	public static void TestRandom()
+	public static void testRandom()
 	{
 		int[] stats = new int[8];
 		for (int i = 0 ; i < stats.length; i++) 
@@ -70,7 +70,7 @@ public class PublicFunctions
 		System.out.println("Test random: Creating 100 Pieces");
 		for (int i = 0; i < 100; i++)
 		{
-			int r = PublicFunctions.GetRandomNumber();
+			int r = PublicFunctions.getRandomNumber();
 			stats[r]++;
 		}
 		
@@ -121,7 +121,7 @@ public class PublicFunctions
 	
 	public static void main(String[] args)
 	{
-		//System.out.println(GetRandomNumber());
+		//System.out.println(getRandomNumber());
 		testMatrix();
 	}
 }

@@ -33,7 +33,7 @@ public class BoardBase
 	 */
 	public Piece pieceAt(int i, int j)
 	{
-		if (PublicFunctions.IsValidPosition(i) && PublicFunctions.IsValidPosition(j)) 
+		if (PublicFunctions.isValidPosition(i) && PublicFunctions.isValidPosition(j)) 
 		{
 			return board[i][j];
 		}
@@ -68,7 +68,7 @@ public class BoardBase
 	 * @param j index
 	 * @return The piece above the given index
 	 */
-	public Piece GetUpPiece(int i, int j)
+	public Piece getUpPiece(int i, int j)
 	{
 		return pieceAt(i - 1, j);
 	}
