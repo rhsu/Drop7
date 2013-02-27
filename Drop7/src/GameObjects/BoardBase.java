@@ -31,7 +31,7 @@ public class BoardBase
 	 * @param j index
 	 * @return The piece from the board. Null if no piece exists
 	 */
-	public Piece PieceAt(int i, int j)
+	public Piece pieceAt(int i, int j)
 	{
 		if (PublicFunctions.IsValidPosition(i) && PublicFunctions.IsValidPosition(j)) 
 		{
@@ -46,9 +46,9 @@ public class BoardBase
 	 * @param j index
 	 * @return The piece to the left of the given index
 	 */
-	public Piece GetLeftPiece(int i, int j)
+	public Piece getLeftPiece(int i, int j)
 	{		
-		return PieceAt(i, j - 1);
+		return pieceAt(i, j - 1);
 	}
 	
 	/**
@@ -57,9 +57,9 @@ public class BoardBase
 	 * @param j index
 	 * @return The piece to the right of the given index
 	 */
-	public Piece GetRightPiece(int i, int j)
+	public Piece getRightPiece(int i, int j)
 	{
-		return PieceAt(i, j + 1);
+		return pieceAt(i, j + 1);
 	}
 	
 	/**
@@ -70,7 +70,7 @@ public class BoardBase
 	 */
 	public Piece GetUpPiece(int i, int j)
 	{
-		return PieceAt(i - 1, j);
+		return pieceAt(i - 1, j);
 	}
 	
 	/**
@@ -79,9 +79,9 @@ public class BoardBase
 	 * @param j index
 	 * @return The piece below the given index
 	 */
-	public Piece GetDownPiece(int i, int j)
+	public Piece getDownPiece(int i, int j)
 	{
-		return PieceAt(i + 1, j);
+		return pieceAt(i + 1, j);
 	}
 	
 	@Override
@@ -92,7 +92,7 @@ public class BoardBase
 		{
 			for (int j = 0 ; j < 7; j++)
 			{
-				builder.append(PieceAt(i,j).toString()).append(" ");
+				builder.append(pieceAt(i,j).toString()).append(" ");
 			}
 			builder.append("\n");
 		}
@@ -103,6 +103,6 @@ public class BoardBase
 	{
 		Board b = new Board();
 		System.out.println(b);
-		System.out.println(b.PieceAt(6, 6));
+		System.out.println(b.pieceAt(6, 6));
 	}
 }

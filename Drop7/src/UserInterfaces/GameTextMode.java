@@ -24,7 +24,7 @@ public class GameTextMode extends Game
 	/**
 	 * The main UI of the GameTextMode class
 	 */
-	public void Menu()
+	public void menu()
 	{
 		while(true)
 		{
@@ -63,7 +63,7 @@ public class GameTextMode extends Game
 			}
 			else if(PublicFunctions.IsValidPosition(position))
 			{
-				if(!board.Insert(Integer.parseInt(position), random))
+				if(!board.insert(Integer.parseInt(position), random))
 				{
 					System.out.println("You lose");
 					//dump statistics here
@@ -83,6 +83,6 @@ public class GameTextMode extends Game
 	public static void main(String[] args)
 	{
 		GameTextMode g = new GameTextMode();
-		g.Menu();
+		g.menu();
 	}
 }

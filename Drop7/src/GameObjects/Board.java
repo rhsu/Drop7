@@ -16,7 +16,7 @@ public class Board extends BoardBase
 	 * @return True if the insert was successful, else returns false
 	 * @throws IllegalArgumentException If an incorrect position or value is given+
 	 */
-	public boolean Insert(int position, int value)
+	public boolean insert(int position, int value)
 	{
 		if((position < 1) || (position > 7) || (value > 8))
 		{
@@ -28,7 +28,7 @@ public class Board extends BoardBase
 		
 		for (int index = 6; index >= 0; index--)
 		{
-			Piece current = PieceAt(index, position);
+			Piece current = pieceAt(index, position);
 			if(current.getType() == Piece.Type.EMPTY)
 			{				
 				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.NEW);	
@@ -42,7 +42,7 @@ public class Board extends BoardBase
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
-		b.Insert(7,8);
+		b.insert(7,8);
 		System.out.println(b)
 ;	}
 }
