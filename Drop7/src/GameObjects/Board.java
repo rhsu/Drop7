@@ -4,26 +4,11 @@ package GameObjects;
  * @author RHsu
  */
 //Creates a board where the game can be played
-public class Board
-{
-	//<editor-fold defaultstate="collapsed" desc="PROTECTED">
-	protected Piece[][] board;
-	//</editor-fold>
-	
-	/**
-	 * Creates a random piece if the piece is at the bottom, otherwise create an empty piece.
-	 */
+public class Board extends BoardBase
+{	
 	public Board()
 	{
-		board = new Piece[7][7];
-
-		for (int i = 0; i < 7; i++)
-		{
-			for (int j = 0; j < 7; j++) 
-			{
-				board[i][j] = (i < 6) ? new Piece(Piece.Type.EMPTY) : new Piece(Piece.Type.NEW);
-			}
-		}
+		super();
 	}
 		
 	/**
@@ -33,7 +18,7 @@ public class Board
 	 */
 	public boolean Insert(int position, int value)
 	{
-		if((position <= 0) || (value > 7))
+		if((position <= 0) || (position > 7) || (value > 7))
 		{
 			throw new IllegalArgumentException();
 		}
@@ -54,26 +39,11 @@ public class Board
 		
 		return false;
 	}
-
-	@Override
-	public String toString()
-	{
-		StringBuilder builder = new StringBuilder();
-		for (int i = 0; i < 7; i++)
-		{
-			for (int j = 0 ; j < 7; j++)
-			{
-				builder.append(board[i][j].toString()).append(" ");
-			}
-			builder.append("\n");
-		}
-		return builder.toString();
-	}
 	
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
-		b.Insert(1,8);
+		b.Insert(1,3);
 		System.out.print(b)
 ;	}
 }

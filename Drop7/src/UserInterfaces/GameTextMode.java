@@ -1,7 +1,6 @@
 package UserInterfaces;
 
 import GameObjects.Game;
-import GameObjects.Piece;
 import PublicLibrary.PublicFunctions;
 import java.util.Scanner;
 
@@ -29,10 +28,11 @@ public class GameTextMode extends Game
 		while(true)
 		{
 		
-			Piece RandomPiece = Piece.CreateRandomPiece();
+			//Piece RandomPiece = Piece.CreateRandomPiece();
+			int random = PublicFunctions.GetRandomNumberPiece();
 			
 			builder.setLength(0);
-			builder.append("The new piece is ").append(RandomPiece.toString()).append("\n");
+			builder.append("The new piece is ").append(random).append("\n");
 			builder.append(board.toString());
 			
 			System.out.println(builder);
@@ -53,7 +53,7 @@ public class GameTextMode extends Game
 			}
 			else if(PublicFunctions.IsValidPosition(position))
 			{
-				if(!board.Insert(Integer.parseInt(position), RandomPiece.getValue()))
+				if(!board.Insert(Integer.parseInt(position), random))
 				{
 					System.out.println("You lose");
 					//dump statistics here

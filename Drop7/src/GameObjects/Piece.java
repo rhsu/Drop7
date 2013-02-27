@@ -14,9 +14,11 @@ public class Piece
 	public static final int EMPTY = 0;
 	//</editor-fold>
 	
-	//<editor-fold defaultstate="collapsed" desc="PROTECTED">
-	protected int value;
-	protected Type type;
+	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
+	private int value;
+	private Type type;
+	private int horizontal;
+	private int vertical;
 	//</editor-fold>
 	
 	//<editor-fold defaultstate="collapsed" desc="ACCESSORS">
@@ -51,6 +53,16 @@ public class Piece
 	{
 		this.type = type;
 	}
+	
+	public int getHorizontal()
+	{
+		return this.horizontal;
+	}
+	
+	public int getVertical()
+	{
+		return this.vertical;
+	}
 	//</editor-fold>
 	
 	/**
@@ -67,6 +79,7 @@ public class Piece
 	/**
 	 * Creates a new piece based off of the type
 	 * @param type
+	 * @deprecated
 	 */
 	public Piece(Type type)
 	{
@@ -88,12 +101,38 @@ public class Piece
 		}
 	}
 	
-	protected Piece(Type type, int value)
+	public Piece(Type type, int horizontal, int vertical)
 	{
 		this.type = type;
+		this.horizontal = horizontal;
+		this.vertical = vertical;
+		switch(type)
+		{
+			case MYSTERY1:
+				value = MYSTERY_STAGE_1;
+				break;
+			case MYSTERY2:
+				value = MYSTERY_STAGE_2;
+				break;
+			case NEW:
+				value = PublicFunctions.GetRandomNumber();
+				break;
+			case EMPTY:
+				value = EMPTY;
+				break;
+		}
+	}
+	
+	@Deprecated
+	public Piece(int value)
+	{
+		this.type = Type.NEW;
+		//this.horizontal = horizontal;
+		//this.vertical = vertical;
 		this.value = value;
 	}
 	
+	@Deprecated
 	public static Piece CreateRandomPiece()
 	{
 		int random = PublicFunctions.GetRandomNumberPiece();
@@ -102,7 +141,7 @@ public class Piece
 			case 8:
 				return new Piece(Type.MYSTERY1);
 			default:
-				return new Piece(Type.NEW, random);
+				return new Piece(random);
 		}
 	}
 	

@@ -5,7 +5,7 @@ package GameObjects;
  */
 public class Game 
 {
-	//<editor-fold defaultstate="collapsed" desc="protected">
+	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	protected Board board;
 	//</editor-fold>
 	
