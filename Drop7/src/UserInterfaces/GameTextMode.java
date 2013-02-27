@@ -4,15 +4,16 @@ import GameObjects.Game;
 import PublicLibrary.PublicFunctions;
 import java.util.Scanner;
 
-/**
- *
- * @author RHsu
- */
 public class GameTextMode extends Game
 {
+	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	private Scanner scanner;
 	private StringBuilder builder;
+	//</editor-fold>
 	
+	/**
+	 * A terminal GUI of the Drop7 game
+	 */
 	public GameTextMode()
 	{
 		super();
@@ -21,15 +22,14 @@ public class GameTextMode extends Game
 	}
 	
 	/**
-	 * The main UI of the game.
+	 * The main UI of the GameTextMode class
 	 */
 	public void Menu()
 	{
 		while(true)
 		{
 		
-			//Piece RandomPiece = Piece.CreateRandomPiece();
-			int random = 8;//PublicFunctions.GetRandomNumberPiece();
+			int random = PublicFunctions.GetRandomNumberPiece();
 			
 			builder.setLength(0);
 			
@@ -59,6 +59,7 @@ public class GameTextMode extends Game
 			else if(position.equalsIgnoreCase("help"))
 			{
 				System.out.println("Help here!");
+				//TODO: Should not generate a new piece
 			}
 			else if(PublicFunctions.IsValidPosition(position))
 			{
@@ -73,6 +74,7 @@ public class GameTextMode extends Game
 			}
 			else
 			{
+				//TODO: Should not generate a new piece
 				System.out.println("Invalid Entry");
 			}
 		}

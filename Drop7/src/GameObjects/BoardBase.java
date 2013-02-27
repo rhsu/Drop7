@@ -4,8 +4,15 @@ import PublicLibrary.PublicFunctions;
 
 public class BoardBase 
 {
+	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	protected Piece[][] board;
-
+	//</editor-fold>
+	
+	/**
+	 * The base constructor for building a Drop7 board.
+	 * @see Board Recommended to use this class when constructing a board 
+	 *			  since it contains the necessary functions for playing the Drop7 Game
+	 */
 	public BoardBase()
 	{
 		board = new Piece[7][7];
@@ -18,6 +25,12 @@ public class BoardBase
 		}
 	}
 	
+	/**
+	 * Retrieves a Piece from the board with the given indexes
+	 * @param i index
+	 * @param j index
+	 * @return The piece from the board. Null if no piece exists
+	 */
 	public Piece PieceAt(int i, int j)
 	{
 		if (PublicFunctions.IsValidPosition(i) && PublicFunctions.IsValidPosition(j)) 
@@ -27,21 +40,45 @@ public class BoardBase
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @param i index
+	 * @param j index
+	 * @return The piece to the left of the given index
+	 */
 	public Piece GetLeftPiece(int i, int j)
 	{		
 		return PieceAt(i, j - 1);
 	}
 	
+	/**
+	 * 
+	 * @param i index
+	 * @param j index
+	 * @return The piece to the right of the given index
+	 */
 	public Piece GetRightPiece(int i, int j)
 	{
 		return PieceAt(i, j + 1);
 	}
 	
+	/**
+	 * 
+	 * @param i index
+	 * @param j index
+	 * @return The piece above the given index
+	 */
 	public Piece GetUpPiece(int i, int j)
 	{
 		return PieceAt(i - 1, j);
 	}
 	
+	/**
+	 * 
+	 * @param i index
+	 * @param j index
+	 * @return The piece below the given index
+	 */
 	public Piece GetDownPiece(int i, int j)
 	{
 		return PieceAt(i + 1, j);

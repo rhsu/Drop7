@@ -80,7 +80,13 @@ System.out.println("HERE???");
 		NEW,
 		EMPTY
 	}
-		
+	
+	/**
+	 * Constructs a piece object
+	 * @param type The type of the piece 
+	 * @param horizontal The horizontal index
+	 * @param vertical The vertical index
+	 */
 	public Piece(Type type, int horizontal, int vertical)
 	{
 		this.type = type;
@@ -105,7 +111,7 @@ System.out.println("HERE???");
 	
 	@Override
 	/**
-	 * returns a textual representation of the piece.
+	 * returns a text representation of the piece.
 	 */
 	public String toString()
 	{

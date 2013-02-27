@@ -1,11 +1,10 @@
 package GameObjects;
 
-/**
- * @author RHsu
- */
-//Creates a board where the game can be played
 public class Board extends BoardBase
 {	
+	/**
+	 * Constructs a board for playing the Drop7 game.
+	 */
 	public Board()
 	{
 		super();
@@ -13,8 +12,9 @@ public class Board extends BoardBase
 		
 	/**
 	 * Given a position, this function will create a new piece and update the piece
-	 * @param position the column that the piece should be inserted
-	 * @return true if the insert was successful, else false
+	 * @param position The column number to insert the piece. Do not use with array indexes
+	 * @return True if the insert was successful, else returns false
+	 * @throws IllegalArgumentException If an incorrect position or value is given+
 	 */
 	public boolean Insert(int position, int value)
 	{
@@ -28,17 +28,10 @@ public class Board extends BoardBase
 		
 		for (int index = 6; index >= 0; index--)
 		{
-			Piece current = board[index][position];
+			Piece current = PieceAt(index, position);
 			if(current.getType() == Piece.Type.EMPTY)
-			{
-				if(value == 8) 
-				{
-					current.setType(Piece.Type.MYSTERY1);
-				}
-				else 
-				{
-					current.setType(Piece.Type.NEW);
-				}
+			{				
+				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.NEW);	
 				current.setValue(value);
 				return true;
 			}

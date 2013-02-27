@@ -10,7 +10,7 @@ public class Game
 	//</editor-fold>
 	
 	/**
-	 * Constructs a board to play the game on
+	 * The base class for playing the game.
 	 */
 	public Game()
 	{
