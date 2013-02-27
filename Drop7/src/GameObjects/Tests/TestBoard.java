@@ -1,6 +1,8 @@
 package GameObjects.Tests;
 
 import GameObjects.Board;
+import GameObjects.Piece;
+import Issue2.Board3;
 
 /**
  *
@@ -15,6 +17,28 @@ public class TestBoard
 		{
 			b.pieceAt(6, i).setValue(i + 1);
 		}
+		return b;
+	}
+	
+	public static Board3 getConsecutiveBoard3()
+	{
+		Board3 b = new Board3();
+		for(int i = 0; i < 7; i++)
+		{
+			b.pieceAt(6, i).setValue(i + 1);
+		}
+		return b;
+	}
+	
+	public static Board3 getConsecutiveBoard3v2()
+	{
+		Board3 b = new Board3();
+		for(int i = 0; i < 7; i++)
+		{
+			b.pieceAt(6, i).setValue(i + 1);
+		}
+		b.pieceAt(6, 6).setType(Piece.Type.EMPTY);
+		b.pieceAt(6, 6).setValue(Piece.EMPTY);
 		return b;
 	}
 	

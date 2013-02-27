@@ -51,6 +51,11 @@ public class BoardBase
 		return pieceAt(i, j - 1);
 	}
 	
+	public Piece getLeftPiece(Piece p)
+	{
+		return pieceAt(p.getHorizontal(), p.getVertical() - 1);
+	}
+	
 	/**
 	 * 
 	 * @param i index

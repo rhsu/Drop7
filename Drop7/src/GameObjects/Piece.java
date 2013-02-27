@@ -87,11 +87,11 @@ System.out.println("HERE???");
 	 * @param horizontal The horizontal index
 	 * @param vertical The vertical index
 	 */
-	public Piece(Type type, int horizontal, int vertical)
+	public Piece(Type type, int i, int j)
 	{
 		this.type = type;
-		this.horizontal = horizontal;
-		this.vertical = vertical;
+		this.horizontal = i;
+		this.vertical = j;
 		switch(type)
 		{
 			case MYSTERY1:
