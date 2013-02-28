@@ -1,5 +1,7 @@
 package GameObjects;
 
+import java.util.ArrayList;
+
 public class Board extends BoardBase
 {	
 	/**
@@ -34,7 +36,7 @@ public class Board extends BoardBase
 				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
                                 //int h = getHorizontalAdjacent(current); 
-                                //int v = getVerticalAdjacent(current);
+                                //int v = getColumnAdjacent(current);
                                 //System.out.println("h is: " + h + " and v is : "+ v);
 				return true;
 			}
@@ -49,7 +51,7 @@ public class Board extends BoardBase
          * @param p the parameter piece to perform the calculation on
          * @return the number of pieces that are in the same row as the parameter piece.
          */
-	public int getHorizontalAdjacent(Piece p)
+	public int getRowAdjacent(Piece p)
 	{
                 if((p == null) || (p.getType() == Piece.Type.EMPTY))
                 {
@@ -84,7 +86,7 @@ public class Board extends BoardBase
          * @param p the parameter piece to perform the calculation on
          * @return the number of pieces that are in the same column as the parameter piece.
          */
-	public int getVerticalAdjacent(Piece p)
+	public int getColumnAdjacent(Piece p)
 	{
                 if((p == null) || (p.getType() == Piece.Type.EMPTY))
                 {
@@ -124,5 +126,33 @@ public class Board extends BoardBase
 		
                 System.out.println(b);
 	}
+        
+        //1. Get all in the same row as given piece
+        public ArrayList<Piece> getAllInRow(Piece p)
+        {
+            if(p == null)
+            {
+                throw new NullPointerException();
+            }
+            ArrayList<Piece> list = new ArrayList<>();
+            
+            for(int i = 0; i < 7; i++)
+            {
+                //we only want to add in non-empty pieces
+            }
+            
+            return new ArrayList<>();
+        }
+        
+        //2. Get all in the same column as given piece
+        public ArrayList<Piece> getAllInColumn(Piece p)
+        {
+            return new ArrayList<>();
+        }
+        //3. Get all where piece is marked as remove
+        public ArrayList<Piece> GetAllRemove(Piece p)
+        {
+            return new ArrayList<>();
+        }
 }
 
