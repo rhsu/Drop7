@@ -26,13 +26,12 @@ public class GameTextMode extends Game
 	 */
 	public void menu()
 	{
+                int random = PublicFunctions.getRandomNumberPiece();
 		while(true)
-		{
-		
-			int random = PublicFunctions.getRandomNumberPiece();
-			
+		{			
 			builder.setLength(0);
 			
+                        //Print out the status
 			if(random == 8)
 			{
 				builder.append("The new piece is mystery piece").append("\n");
@@ -41,11 +40,11 @@ public class GameTextMode extends Game
 			{
 				builder.append("The new piece is ").append(random).append("\n");
 			}
-
 			builder.append(board.toString());
-			
 			System.out.println(builder);
 			
+                        
+                        //Prompt starts here
 			System.out.println("Where do you want to place the piece?");
 			
 			String position = scanner.nextLine();
@@ -59,7 +58,6 @@ public class GameTextMode extends Game
 			else if(position.equalsIgnoreCase("help"))
 			{
 				System.out.println("Help here!");
-				//TODO: Should not generate a new piece
 			}
 			else if(PublicFunctions.isValidPosition(position))
 			{
@@ -71,10 +69,10 @@ public class GameTextMode extends Game
 				}
 				System.out.println("Inserting piece...");
 				System.out.println(board);
+                                random = PublicFunctions.getRandomNumberPiece();
 			}
 			else
 			{
-				//TODO: Should not generate a new piece
 				System.out.println("Invalid Entry");
 			}
 		}
