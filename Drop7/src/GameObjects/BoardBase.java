@@ -9,7 +9,7 @@ public class BoardBase
 	//</editor-fold>
 	
 	//<editor-fold defaultstate="collapsed" desc="ACCESSORS">
-	
+        
 	/**
 	 * 
 	 * @param i index
@@ -88,12 +88,12 @@ public class BoardBase
 		{
 			for (int j = 0; j < 7; j++)
 			{
-				board[i][j] = (i < 6) ? new Piece(Piece.Type.EMPTY, i, j) : new Piece(Piece.Type.NEW, i, j);
+				board[i][j] = (i < 6) ? new Piece(Piece.Type.EMPTY, i, j) : new Piece(Piece.Type.SET, i, j);
 			}
 		}
 	}
-	
-	/**
+        
+        /**
 	 * Retrieves a Piece from the board with the given indexes
 	 * @param i index
 	 * @param j index

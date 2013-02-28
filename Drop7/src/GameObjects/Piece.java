@@ -19,6 +19,7 @@ public class Piece
 	private Type type;
 	private int horizontal;
 	private int vertical;
+        private boolean remove;
 	//</editor-fold>
 	
 	//<editor-fold defaultstate="collapsed" desc="ACCESSORS">
@@ -56,6 +57,19 @@ public class Piece
 	public void setType(Type type)
 	{
 		this.type = type;
+                
+                switch(type)
+                {
+                    case EMPTY:
+                        setValue(EMPTY);
+                        break;
+                    case MYSTERY1:
+                        setValue(EMPTY);
+                        break;
+                    case MYSTERY2:
+                        setValue(EMPTY);
+                        break;
+                }
 	}
 	
 	public int getHorizontal()
@@ -67,6 +81,17 @@ public class Piece
 	{
 		return this.vertical;
 	}
+        
+        public boolean getRemove()
+        {
+            return this.remove;
+        }
+        
+        public void setRemove()
+        {
+            this.remove = false;
+        }
+        
 	//</editor-fold>
 	
 	/**
@@ -76,21 +101,22 @@ public class Piece
 	{
 		MYSTERY1,
 		MYSTERY2,
-		NEW,
+		SET,
 		EMPTY
 	}
 	
 	/**
 	 * Constructs a piece object
 	 * @param type The type of the piece 
-	 * @param horizontal The horizontal index
-	 * @param vertical The vertical index
+	 * @param i The horizontal index
+	 * @param j The vertical index
 	 */
 	public Piece(Type type, int i, int j)
 	{
 		this.type = type;
 		this.horizontal = i;
 		this.vertical = j;
+
 		switch(type)
 		{
 			case MYSTERY1:
@@ -99,7 +125,7 @@ public class Piece
 			case MYSTERY2:
 				value = MYSTERY_STAGE_2;
 				break;
-			case NEW:
+			case SET:
 				value = PublicFunctions.getRandomNumber();
 				break;
 			case EMPTY:

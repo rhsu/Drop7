@@ -36,7 +36,7 @@ public class TestBoard
 		{
 			b.pieceAt(6, i).setValue(i + 1);
 		}
-                b.pieceAt(5, 6).setType(Piece.Type.NEW);
+                b.pieceAt(5, 6).setType(Piece.Type.SET);
                 b.pieceAt(5, 6).setValue(3);
 		b.pieceAt(6, 0).setType(Piece.Type.EMPTY);
 		b.pieceAt(6, 0).setValue(Piece.EMPTY);
