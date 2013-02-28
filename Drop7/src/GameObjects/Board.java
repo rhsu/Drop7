@@ -33,6 +33,9 @@ public class Board extends BoardBase
 			{				
 				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
+                                //int h = getHorizontalAdjacent(current); 
+                                //int v = getVerticalAdjacent(current);
+                                //System.out.println("h is: " + h + " and v is : "+ v);
 				return true;
 			}
 		}
@@ -109,23 +112,17 @@ public class Board extends BoardBase
                 
                 numAdjacent++; //include self
                 
-                System.out.println("There are " + numAdjacent + " adjacent pieces");
                 return numAdjacent;
 	}
         
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
-		b.insert(7,8);
-		System.out.println(b);
-                        
-                //Board b = TestBoard.getConsecutiveBoard3v2();
-		//System.out.println(b);
-                
-                //System.out.println(b.pieceAt(6, 6));
-                //System.out.println(b.getVerticalAdjacent(b.pieceAt(6,6)));
-                
-                //System.out.println(b.getVerticalAdjacent(b.pieceAt(0,0)));
+                System.out.println(b);
+		
+                b.insert(7,8);
+		
+                System.out.println(b);
 	}
 }
 

@@ -68,7 +68,6 @@ public class GameTextMode extends Game
 					System.exit(0);
 				}
 				System.out.println("Inserting piece...");
-				System.out.println(board);
                                 random = PublicFunctions.getRandomNumberPiece();
 			}
 			else

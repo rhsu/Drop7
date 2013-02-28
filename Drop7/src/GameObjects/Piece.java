@@ -135,9 +135,6 @@ public class Piece
 	}
 	
 	@Override
-	/**
-	 * returns a text representation of the piece.
-	 */
 	public String toString()
 	{
 		switch(type)
