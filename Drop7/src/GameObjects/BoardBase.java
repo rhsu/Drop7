@@ -20,7 +20,7 @@ public class BoardBase
 		{
 			for (int j = 0; j < 7; j++)
 			{
-				board[i][j] = (i < 6) ? new Piece(Piece.Type.EMPTY, i, j) : new Piece(Piece.Type.NEW, i, j);
+				board[i][j] = (i < 6) ? new Piece(Piece.Type.EMPTY, i, j) : new Piece(Piece.Type.SET, i, j);
 			}
 		}
 	}

@@ -19,6 +19,7 @@ public class Piece
 	private Type type;
 	private int horizontal;
 	private int vertical;
+        private boolean remove;
 	//</editor-fold>
 	
 	//<editor-fold defaultstate="collapsed" desc="ACCESSORS">
@@ -37,7 +38,6 @@ public class Piece
 	{
 		if(value == 8) 
 		{
-System.out.println("HERE???");
 			this.value =  MYSTERY_STAGE_1;
 		}
 		this.value = value;
@@ -57,6 +57,19 @@ System.out.println("HERE???");
 	public void setType(Type type)
 	{
 		this.type = type;
+                
+                switch(type)
+                {
+                    case EMPTY:
+                        setValue(EMPTY);
+                        break;
+                    case MYSTERY1:
+                        setValue(EMPTY);
+                        break;
+                    case MYSTERY2:
+                        setValue(EMPTY);
+                        break;
+                }
 	}
 	
 	public int getHorizontal()
@@ -68,6 +81,17 @@ System.out.println("HERE???");
 	{
 		return this.vertical;
 	}
+        
+        public boolean getRemove()
+        {
+            return this.remove;
+        }
+        
+        public void setRemove()
+        {
+            this.remove = false;
+        }
+        
 	//</editor-fold>
 	
 	/**
@@ -77,7 +101,7 @@ System.out.println("HERE???");
 	{
 		MYSTERY1,
 		MYSTERY2,
-		NEW,
+		SET,
 		EMPTY
 	}
 	
@@ -88,10 +112,11 @@ System.out.println("HERE???");
 	 * @param vertical The vertical index
 	 */
 	public Piece(Type type, int horizontal, int vertical)
-	{
+        {
 		this.type = type;
 		this.horizontal = horizontal;
 		this.vertical = vertical;
+                this.remove = false;
 		switch(type)
 		{
 			case MYSTERY1:
@@ -100,7 +125,7 @@ System.out.println("HERE???");
 			case MYSTERY2:
 				value = MYSTERY_STAGE_2;
 				break;
-			case NEW:
+			case SET:
 				value = PublicFunctions.getRandomNumber();
 				break;
 			case EMPTY:
