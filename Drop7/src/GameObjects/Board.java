@@ -38,12 +38,94 @@ public class Board extends BoardBase
 		}
 		return false;
 	}
+        
+        /**
+         * calculates the number of adjacent pieces in the same (horizontal) row as a
+         * given parameter piece (Including itself: e.g. A piece with no pieces next to it
+         * will return a value of 1)
+         * @param p the parameter piece to perform the calculation on
+         * @return the number of pieces that are in the same row as the parameter piece.
+         */
+	public int getHorizontalAdjacent(Piece p)
+	{
+                if((p == null) || (p.getType() == Piece.Type.EMPTY))
+                {
+                    return 0;
+                }
+                
+		Piece current = p;
+                int numAdjacent = 0;
+                while((getLeftPiece(current) != null) && (getLeftPiece(current).getType() != Piece.Type.EMPTY))
+                {
+                    numAdjacent++;
+                    current = getLeftPiece(current);
+                }
+                
+                current = p;
+                
+                while((getRightPiece(current) != null) && (getRightPiece(current).getType() != Piece.Type.EMPTY))
+                {
+                    numAdjacent++;
+                    current = getRightPiece(current);
+                }
+
+                numAdjacent++; //increment to include self;
+                
+                return numAdjacent;     
+	}
 	
+        /**
+         * calculates the number of adjacent pieces in the same (vertical) column as a
+         * given parameter piece (Including itself: e.g. A piece with no pieces next to it
+         * will return a value of 1)
+         * @param p the parameter piece to perform the calculation on
+         * @return the number of pieces that are in the same column as the parameter piece.
+         */
+	public int getVerticalAdjacent(Piece p)
+	{
+                if((p == null) || (p.getType() == Piece.Type.EMPTY))
+                {
+                    return 0;
+                }
+            
+		Piece current = p;
+                int numAdjacent = 0;
+
+                //get the pieces below
+                while((getUpPiece(current) != null) && (getUpPiece(current).getType() != Piece.Type.EMPTY))
+                {
+                    numAdjacent++;
+                    current = getUpPiece(current);
+                }
+                
+                current = p; //reset current: need to count the down pieces
+                
+                //get the pieces above
+                while((getDownPiece(current) != null) && (getDownPiece(current).getType() != Piece.Type.EMPTY))
+                {
+                    numAdjacent++;
+                    current = getDownPiece(current);
+                }
+                
+                numAdjacent++; //include self
+                
+                System.out.println("There are " + numAdjacent + " adjacent pieces");
+                return numAdjacent;
+	}
+        
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
 		b.insert(7,8);
-		System.out.println(b)
-;	}
+		System.out.println(b);
+                        
+                //Board b = TestBoard.getConsecutiveBoard3v2();
+		//System.out.println(b);
+                
+                //System.out.println(b.pieceAt(6, 6));
+                //System.out.println(b.getVerticalAdjacent(b.pieceAt(6,6)));
+                
+                //System.out.println(b.getVerticalAdjacent(b.pieceAt(0,0)));
+	}
 }
 

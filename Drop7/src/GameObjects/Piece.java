@@ -37,8 +37,7 @@ public class Piece
 	{
 		if(value == 8) 
 		{
-System.out.println("HERE???");
-			this.value =  MYSTERY_STAGE_1;
+                    this.value =  MYSTERY_STAGE_1;
 		}
 		this.value = value;
 	}
