@@ -1,5 +1,6 @@
 package GameObjects;
 
+import GameObjects.Tests.TestBoard;
 import java.util.ArrayList;
 
 public class Board extends BoardBase
@@ -116,17 +117,7 @@ public class Board extends BoardBase
                 
                 return numAdjacent;
 	}
-        
-	public static void main(String[] args)
-	{		
-		Board b = new Board();
-                System.out.println(b);
-		
-                b.insert(7,8);
-		
-                System.out.println(b);
-	}
-        
+                
         //1. Get all in the same row as given piece
         public ArrayList<Piece> getAllInRow(Piece p)
         {
@@ -134,14 +125,27 @@ public class Board extends BoardBase
             {
                 throw new NullPointerException();
             }
+            
+            Piece current = p;
+
+            
             ArrayList<Piece> list = new ArrayList<>();
             
-            for(int i = 0; i < 7; i++)
+            while ((getLeftPiece(current) != null) && (getLeftPiece(current).getType() != Piece.Type.EMPTY))
             {
-                //we only want to add in non-empty pieces
+                list.add(current);
+                current = getLeftPiece(current);
             }
             
-            return new ArrayList<>();
+            current = p;
+            
+            while((getRightPiece(current) != null) && (getRightPiece(current).getType() != Piece.Type.EMPTY))
+            {
+                list.add(current);
+                current = getRightPiece(current);
+            }
+            
+            return list;
         }
         
         //2. Get all in the same column as given piece
@@ -154,5 +158,16 @@ public class Board extends BoardBase
         {
             return new ArrayList<>();
         }
+
+	public static void main(String[] args)
+	{		
+		Board b = new Board();
+                b = TestBoard.getConsecutiveBoard();
+                System.out.println(b);
+                
+                ArrayList<Piece> list = b.getAllInRow(b.pieceAt(6, 6));
+                
+                System.out.println(list);
+	}
 }
 
