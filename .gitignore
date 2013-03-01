@@ -164,3 +164,6 @@ pip-log.txt
 .DS_Store
 /PublicFunctions/nbproject/private/
 /Drop7Swing/nbproject/private/
+/test/nbproject/private/
+/test_/nbproject/private/
+/Test/nbproject/private/

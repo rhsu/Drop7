@@ -1,6 +1,5 @@
 package GameObjects;
 
-import GameObjects.Tests.TestBoard;
 import java.util.ArrayList;
 
 public class Board extends BoardBase
@@ -187,14 +186,7 @@ public class Board extends BoardBase
 
 	public static void main(String[] args)
 	{		
-		Board b = new Board();
-                b = TestBoard.getConsecutiveBoard();
-                
-                System.out.println(b);
-                
-                System.out.println("The piece is " + b.pieceAt(6, 6));
-                ArrayList<Piece> list = b.getAllInColumn(b.pieceAt(6, 6));
-                System.out.println("The list is " + list);
+
 	}
 }
 
