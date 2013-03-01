@@ -117,57 +117,84 @@ public class Board extends BoardBase
                 
                 return numAdjacent;
 	}
-                
-        //1. Get all in the same row as given piece
+        
+        /**
+         * @param p The piece to perform the method on
+         * @return A list of pieces that are in the same row as the parameter piece
+         */
         public ArrayList<Piece> getAllInRow(Piece p)
         {
-            if(p == null)
+            if (p == null)
             {
                 throw new NullPointerException();
             }
-            
-            Piece current = p;
-
-            
+            int row = p.getHorizontal();
             ArrayList<Piece> list = new ArrayList<>();
-            
-            while ((getLeftPiece(current) != null) && (getLeftPiece(current).getType() != Piece.Type.EMPTY))
+            for(int j = 0; j < 7; j++)
             {
-                list.add(current);
-                current = getLeftPiece(current);
+                Piece temp = pieceAt(row, j);
+                if((temp != null) && (temp.getType() != Piece.Type.EMPTY))
+                {
+                    list.add(temp);
+                }
             }
-            
-            current = p;
-            
-            while((getRightPiece(current) != null) && (getRightPiece(current).getType() != Piece.Type.EMPTY))
-            {
-                list.add(current);
-                current = getRightPiece(current);
-            }
-            
             return list;
         }
         
-        //2. Get all in the same column as given piece
+        /**
+         * @param p The piece to perform the method on
+         * @return A list of pieces that are in the same column as the parameter piece
+         */
         public ArrayList<Piece> getAllInColumn(Piece p)
         {
-            return new ArrayList<>();
+            if (p == null)
+            {
+                throw new NullPointerException();
+            }
+            int column = p.getVertical();
+            ArrayList<Piece> list = new ArrayList<>();
+            for(int i = 0; i < 7; i++)
+            {
+                //System.out.println(pieceAt(row, i));
+                Piece temp = pieceAt(i, column);
+                if((temp != null) && (temp.getType() != Piece.Type.EMPTY))
+                {
+                    list.add(temp);
+                }
+            }
+            return list;
         }
-        //3. Get all where piece is marked as remove
-        public ArrayList<Piece> GetAllRemove(Piece p)
+        
+        /**
+         * @return A list of pieces that are marked as remove
+         */
+        public ArrayList<Piece> getAllRemove()
         {
-            return new ArrayList<>();
+            ArrayList<Piece> list = new ArrayList<>();
+            for(int i = 0; i < 7; i++)
+            {
+                for(int j = 0; j < 7; j++)
+                {
+                    Piece p = pieceAt(i, j);
+                    if(p.getType() != Piece.Type.EMPTY)
+                    {
+                        list.add(p);
+                    }
+                }
+            }
+            return list;
         }
 
 	public static void main(String[] args)
 	{		
 		Board b = new Board();
                 b = TestBoard.getConsecutiveBoard();
+                
                 System.out.println(b);
                 
-                ArrayList<Piece> list = b.getAllInRow(b.pieceAt(6, 6));
-                
-                System.out.println(list);
+                System.out.println("The piece is " + b.pieceAt(6, 6));
+                ArrayList<Piece> list = b.getAllInColumn(b.pieceAt(6, 6));
+                System.out.println("The list is " + list);
 	}
 }
 
