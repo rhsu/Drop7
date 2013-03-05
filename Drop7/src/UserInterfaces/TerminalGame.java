@@ -4,7 +4,7 @@ import GameObjects.Game;
 import PublicLibrary.PublicFunctions;
 import java.util.Scanner;
 
-public class GameTextMode extends Game
+public class TerminalGame extends Game
 {
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	private Scanner scanner;
@@ -14,7 +14,7 @@ public class GameTextMode extends Game
 	/**
 	 * A terminal GUI of the Drop7 game
 	 */
-	public GameTextMode()
+	public TerminalGame()
 	{
 		super();
 		builder = new StringBuilder();
@@ -22,7 +22,7 @@ public class GameTextMode extends Game
 	}
 	
 	/**
-	 * The main UI of the GameTextMode class
+	 * The main UI of the TerminalGame class
 	 */
 	public void menu()
 	{
@@ -79,7 +79,7 @@ public class GameTextMode extends Game
 	
 	public static void main(String[] args)
 	{
-		GameTextMode g = new GameTextMode();
+		TerminalGame g = new TerminalGame();
 		g.menu();
 	}
 }
