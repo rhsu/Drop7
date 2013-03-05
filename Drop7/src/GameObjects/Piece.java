@@ -28,29 +28,29 @@ public class Piece
 	 */
 	public int getValue()
 	{
-		 return value;
+            return value;
 	}
 	
 	/**
-	 * @param value the value to set
-	 */
+	* @param value the value to set
+	*/
 	public void setValue(int value)
 	{
-            switch(value)
-            {
-                //set the piece to be mystery. This happens during piece generation
-                case 8:
-                    this.type = Type.MYSTERY1;
-                    this.value = MYSTERY_STAGE_1;
-                    break;
-                case EMPTY:
-                    this.type = Type.EMPTY;
-                    this.value = EMPTY;
-                    break;
-                default:
-                    this.type = Type.SET;
-                    this.value = value;
-            }
+		switch(value)
+		{
+			//set the piece to be mystery. This happens during piece generation
+			case 8:
+				this.type = Type.MYSTERY1;
+				this.value = MYSTERY_STAGE_1;
+				break;
+			case EMPTY:
+				this.type = Type.EMPTY;
+				this.value = EMPTY;
+				break;
+			default:
+				this.type = Type.SET;
+				this.value = value;
+		}
 	}
 
 	/**

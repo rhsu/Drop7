@@ -9,10 +9,10 @@ import GameObjects.Piece;
  */
 public class TestBoard extends Board
 {
-        public TestBoard()
-        {
-            super();
-        }
+	public TestBoard()
+	{
+		super();
+	}
     
 	public static TestBoard getConsecutiveBoard()
 	{
@@ -22,7 +22,7 @@ public class TestBoard extends Board
 			b.pieceAt(6, i).setValue(i + 1);
 		}
 		return b;
-        }
+	}
 	
 	public static TestBoard getConsecutiveBoard3v2()
 	{
@@ -32,20 +32,15 @@ public class TestBoard extends Board
 			b.pieceAt(6, i).setValue(i + 1);
 		}
                 
-                //set 5 - 6 to 3/SET
-                b.pieceAt(5, 6).setType(Piece.Type.SET);
-                b.pieceAt(5, 6).setValue(3);
-                
-                //set 6 - 0 to empty
-		//b.pieceAt(6, 0).setType(Piece.Type.EMPTY);
-		//b.pieceAt(6, 0).setValue(Piece.EMPTY);
-                b.pieceAt(6,0).setType(Piece.Type.EMPTY);
+		//set 5 - 6 to 3-SET
+		b.pieceAt(5, 6).setValue(3);
+            
+		//set 6 - 0 to empty
+		b.pieceAt(6,0).setType(Piece.Type.EMPTY);
                 
                 
-                //set 6 - 2 to empty
-                //b.pieceAt(6, 2).setType(Piece.Type.EMPTY);
-                //b.pieceAt(6, 2).setValue(Piece.EMPTY);
-                b.pieceAt(6,2).setType(Piece.Type.EMPTY);
+		//set 6 - 2 to empty
+		b.pieceAt(6,2).setType(Piece.Type.EMPTY);
 		return b;
 	}
 	
