@@ -7,47 +7,51 @@ import GameObjects.Piece;
  *
  * @author RHsu
  */
-public class TestBoard
+public class TestBoard extends Board
 {
-	public static Board getConsecutiveBoard()
+        public TestBoard()
+        {
+            super();
+        }
+    
+	public static TestBoard getConsecutiveBoard()
 	{
-		Board b = new Board();
+		TestBoard b = new TestBoard();
 		for(int i = 0; i < 7; i++)
 		{
 			b.pieceAt(6, i).setValue(i + 1);
 		}
 		return b;
-	}
+        }
 	
-	public static Board getConsecutiveBoard3()
+	public static TestBoard getConsecutiveBoard3v2()
 	{
-		Board b = new Board();
+		TestBoard b = new TestBoard();
 		for(int i = 0; i < 7; i++)
 		{
 			b.pieceAt(6, i).setValue(i + 1);
 		}
-		return b;
-	}
-	
-	public static Board getConsecutiveBoard3v2()
-	{
-		Board b = new Board();
-		for(int i = 0; i < 7; i++)
-		{
-			b.pieceAt(6, i).setValue(i + 1);
-		}
+                
+                //set 5 - 6 to 3/SET
                 b.pieceAt(5, 6).setType(Piece.Type.SET);
                 b.pieceAt(5, 6).setValue(3);
-		b.pieceAt(6, 0).setType(Piece.Type.EMPTY);
-		b.pieceAt(6, 0).setValue(Piece.EMPTY);
-                b.pieceAt(6, 2).setType(Piece.Type.EMPTY);
-                b.pieceAt(6, 2).setValue(Piece.EMPTY);
+                
+                //set 6 - 0 to empty
+		//b.pieceAt(6, 0).setType(Piece.Type.EMPTY);
+		//b.pieceAt(6, 0).setValue(Piece.EMPTY);
+                b.pieceAt(6,0).setType(Piece.Type.EMPTY);
+                
+                
+                //set 6 - 2 to empty
+                //b.pieceAt(6, 2).setType(Piece.Type.EMPTY);
+                //b.pieceAt(6, 2).setValue(Piece.EMPTY);
+                b.pieceAt(6,2).setType(Piece.Type.EMPTY);
 		return b;
 	}
 	
 	public static void main(String[] args)
 	{
-		Board b = TestBoard.getConsecutiveBoard3v2();
+		TestBoard b = TestBoard.getConsecutiveBoard3v2();
 		System.out.println(b);
 	}
 }
