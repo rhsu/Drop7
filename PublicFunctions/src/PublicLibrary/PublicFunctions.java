@@ -7,17 +7,17 @@ package PublicLibrary;
 public class PublicFunctions 
 {
 	/**
-         * Usage: For creating a new SET piece
-	 * @return A random number between 1 and 7
-	 */
+	* Usage: For creating a new SET piece
+	* @return A random number between 1 and 7
+	*/
 	public static int getRandomNumber()
 	{
 		return (int)(Math.random()*7)+1;
 	}
 	
-        /**
-         * @return A random number between 1 and 8. The 8 denotes a mystery piece should generated
-         */
+	/**
+	* @return A random number between 1 and 8. The 8 denotes a mystery piece should generated
+	*/
 	public static int getRandomNumberPiece()
 	{
 		return (int)(Math.random()*8)+1;
@@ -34,10 +34,10 @@ public class PublicFunctions
 	}
 	
 	/**
-	 * Checks if the user inputted position is valid
-         * Usage: In the prompt since the user input is of type string
-	 * @return True if the position of valid
-	 */
+	* Checks if the user inputted position is valid
+	* Usage: In the prompt since the user input is of type string
+	* @return True if the position of valid
+	*/
 	public static boolean isValidPosition(String position)
 	{
 		if(!isInteger(position))
@@ -54,18 +54,18 @@ public class PublicFunctions
 		return false;
 	}
 	
-        /**
-	 * Checks if the user inputted position is valid
-	 * @return True if the position of valid
-	 */
+	/**
+	* Checks if the user inputted position is valid
+	* @return True if the position of valid
+	*/
 	public static boolean isValidPosition(int position)
 	{
 		return ((position >= 0) && (position < 7));
 	}
 	
 	/**
-	 * Creates 100 random pieces and plots the frequency of each piece.
-	 */
+	* Creates 100 random pieces and plots the frequency of each piece.
+	*/
 	@Deprecated
 	public static void testRandom()
 	{
@@ -91,9 +91,9 @@ public class PublicFunctions
 		}	
 	}
 	
-        /**
-         * Creates a matrix to make envisioning indices easier
-         */
+	/**
+	* Creates a matrix to make envisioning indices easier
+	*/
 	public static void testMatrix()
 	{
 		int[][] matrix = new int[5][5];
