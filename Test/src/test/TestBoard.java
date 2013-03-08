@@ -24,7 +24,7 @@ public class TestBoard extends Board
 		return b;
 	}
 	
-	public static TestBoard getConsecutiveBoard3v2()
+	public static TestBoard getTest1()
 	{
 		TestBoard b = new TestBoard();
 		for(int i = 0; i < 7; i++)
@@ -46,7 +46,7 @@ public class TestBoard extends Board
 	
 	public static void main(String[] args)
 	{
-		TestBoard b = TestBoard.getConsecutiveBoard3v2();
+		TestBoard b = TestBoard.getTest1();
 		System.out.println(b);
 	}
 }

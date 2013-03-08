@@ -178,9 +178,9 @@ public class Board extends BoardBase
 			{				
 				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
-                                //int h = getHorizontalAdjacent(current); 
-                                //int v = getColumnAdjacent(current);
-                                //System.out.println("h is: " + h + " and v is : "+ v);
+				//int h = getHorizontalAdjacent(current); 
+				//int v = getColumnAdjacent(current);
+				//System.out.println("h is: " + h + " and v is : "+ v);
 				return true;
 			}
 		}
