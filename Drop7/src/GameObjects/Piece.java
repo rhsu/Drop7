@@ -19,7 +19,7 @@ public class Piece
 	private Type type;
 	private int horizontal;
 	private int vertical;
-        private boolean remove;
+	private boolean remove;
 	//</editor-fold>
 	
 	//<editor-fold defaultstate="collapsed" desc="ACCESSORS">
@@ -92,13 +92,13 @@ public class Piece
 		return this.vertical;
 	}
         
-        public boolean getRemove()
-        {
+	public boolean getRemove()
+	{
             return this.remove;
         }
         
-        public void setRemove()
-        {
+	public void setRemove()
+	{
             this.remove = false;
         }
         
