@@ -186,7 +186,7 @@ public class Board extends BoardBase
 		return false;
 	}
         
-	private void markForRemoval(Piece p)
+	protected void markForRemoval(Piece p)
 	{
 		ArrayList<Piece> rows = getAllInRow(p);
 		ArrayList<Piece> columns = getAllInColumn(p);
@@ -201,7 +201,7 @@ public class Board extends BoardBase
 		}
 	}
 	
-	private void removeMarked()
+	protected void removeMarked()
 	{
 		ArrayList<Piece> marked = getAllRemove();
 		for(Piece item : marked)

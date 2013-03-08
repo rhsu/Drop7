@@ -76,9 +76,15 @@ public class TestBoard extends Board
 		TestBoard b = TestBoard.getTest1();
 		Piece p = b.pieceAt(6, 3);
 		
-		System.out.println(b);
 		b.testCheck(p);
 		
 		System.out.println("Remove is: " + b.getAllRemove());
+		
+		b.markForRemoval(p);
+		
+		System.out.println(b);
+		System.out.println("Calling remove");
+		b.removeMarked();	
+		System.out.println(b);
 	}
 }
