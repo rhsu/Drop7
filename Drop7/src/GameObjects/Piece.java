@@ -99,7 +99,7 @@ public class Piece
         
 	public void setRemove()
 	{
-            this.remove = false;
+            this.remove = true;
         }
         
 	//</editor-fold>
@@ -126,7 +126,8 @@ public class Piece
 		this.type = type;
 		this.horizontal = i;
 		this.vertical = j;
-
+		this.remove = false;
+		
 		switch(type)
 		{
 			case MYSTERY1:

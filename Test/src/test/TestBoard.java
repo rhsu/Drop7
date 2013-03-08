@@ -2,6 +2,7 @@ package test;
 
 import GameObjects.Board;
 import GameObjects.Piece;
+import java.util.ArrayList;
 
 /**
  *
@@ -44,9 +45,40 @@ public class TestBoard extends Board
 		return b;
 	}
 	
+	public void testCheck(Piece p)
+	{
+		ArrayList<Piece> rows = getAllInRow(p);
+		ArrayList<Piece> columns = getAllInColumn(p);
+		
+		System.out.println("rows is : " + rows);
+		System.out.println("columns is : " + columns);
+		
+		for(Piece item : rows)
+		{
+			System.out.println("This is item: " + item);			
+			int value = item.getValue();
+			System.out.println("The value is: " + value);			
+			int column = getColumnAdjacent(item);
+			System.out.println("The column adjacent is " + column);
+			int row = getRowAdjacent(item);
+			System.out.println("The row adjacent is: " + row);
+			if((value == column) || (value == row))
+			{
+				item.setRemove();
+			}
+		}
+	}
+	
+	
+	
 	public static void main(String[] args)
 	{
 		TestBoard b = TestBoard.getTest1();
+		Piece p = b.pieceAt(6, 3);
+		
 		System.out.println(b);
+		b.testCheck(p);
+		
+		System.out.println("Remove is: " + b.getAllRemove());
 	}
 }

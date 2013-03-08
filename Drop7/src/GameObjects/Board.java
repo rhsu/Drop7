@@ -136,7 +136,7 @@ public class Board extends BoardBase
 			for(int j = 0; j < 7; j++)
 			{
 				Piece p = pieceAt(i, j);
-				if(p.getType() != Piece.Type.EMPTY)
+				if(p.getRemove())
 				{
 					list.add(p);
 				}
@@ -195,9 +195,28 @@ public class Board extends BoardBase
 		return false;
 	}
         
-	public void checks(Piece p)
+	public void check(Piece p)
 	{
-		//int h = getHorizontalAdjacent(p);
+		ArrayList<Piece> rows = getAllInRow(p);
+		ArrayList<Piece> columns = getAllInColumn(p);
+		
+//System.out.println("rows is : " + rows);
+//System.out.println("columns is : " + columns);
+		
+		for(Piece item : rows)
+		{
+//System.out.println("This is item: " + item);			
+			int value = item.getValue();
+//System.out.println("The value is: " + value);			
+			int column = getColumnAdjacent(item);
+//System.out.println("The column adjacent is " + column);
+			int row = getRowAdjacent(item);
+//System.out.println("The row adjacent is: " + row);
+			if((value == column) || (value == row))
+			{
+				item.setRemove();
+			}
+		}
 	}
 	
 	public static void main(String[] args)
