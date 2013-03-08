@@ -93,7 +93,7 @@ public class BoardBase
 		}
 	}
         
-        /**
+	/**
 	 * Retrieves a Piece from the board with the given indexes
 	 * @param i index
 	 * @param j index

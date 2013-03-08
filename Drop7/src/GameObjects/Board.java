@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Board extends BoardBase
 {
-    	//<editor-fold defaultstate="collapsed" desc="RETRIEVAL FUNCTIONS">
-                /**
+   //<editor-fold defaultstate="collapsed" desc="RETRIEVAL FUNCTIONS">
+	/**
          * calculates the number of adjacent pieces in the same (horizontal) row as a
          * given parameter piece (Including itself: e.g. A piece with no pieces next to it
          * will return a value of 1)
@@ -40,7 +40,7 @@ public class Board extends BoardBase
                 return numAdjacent;     
 	}
 	
-        /**
+	/**
          * calculates the number of adjacent pieces in the same (vertical) column as a
          * given parameter piece (Including itself: e.g. A piece with no pieces next to it
          * will return a value of 1)
@@ -78,12 +78,12 @@ public class Board extends BoardBase
                 return numAdjacent;
 	}
         
-        /**
+	/**
          * @param p The piece to perform the method on
          * @return A list of pieces that are in the same row as the parameter piece
          */
-        public ArrayList<Piece> getAllInRow(Piece p)
-        {
+	public ArrayList<Piece> getAllInRow(Piece p)
+	{
             if (p == null)
             {
                 throw new NullPointerException();
@@ -101,12 +101,12 @@ public class Board extends BoardBase
             return list;
         }
         
-        /**
+	/**
          * @param p The piece to perform the method on
          * @return A list of pieces that are in the same column as the parameter piece
          */
-        public ArrayList<Piece> getAllInColumn(Piece p)
-        {
+	public ArrayList<Piece> getAllInColumn(Piece p)
+	{
             if (p == null)
             {
                 throw new NullPointerException();
@@ -125,11 +125,11 @@ public class Board extends BoardBase
             return list;
         }
         
-        /**
+	/**
          * @return A list of pieces that are marked as remove
          */
-        public ArrayList<Piece> getAllRemove()
-        {
+	public ArrayList<Piece> getAllRemove()
+	{
             ArrayList<Piece> list = new ArrayList<>();
             for(int i = 0; i < 7; i++)
             {
@@ -145,7 +145,7 @@ public class Board extends BoardBase
             return list;
         }
         
-        //</editor-fold>
+	//</editor-fold>
     
 	/**
 	 * Constructs a board for playing the Drop7 game.
