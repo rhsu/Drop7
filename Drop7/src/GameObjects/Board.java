@@ -178,44 +178,35 @@ public class Board extends BoardBase
 			{				
 				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
-				//int h = getHorizontalAdjacent(current); 
-				//int v = getColumnAdjacent(current);
-				//System.out.println("h is: " + h + " and v is : "+ v);
 				
-				
-				//So at this point piece current is the piece to be inserted.
-				//Perform some checks on current.
-				
-				//Piece insertedPiece = current;
-				
-				
+				markForRemoval(current);				
 				return true;
 			}
 		}
 		return false;
 	}
         
-	public void check(Piece p)
+	private void markForRemoval(Piece p)
 	{
 		ArrayList<Piece> rows = getAllInRow(p);
 		ArrayList<Piece> columns = getAllInColumn(p);
-		
-//System.out.println("rows is : " + rows);
-//System.out.println("columns is : " + columns);
-		
+				
 		for(Piece item : rows)
-		{
-//System.out.println("This is item: " + item);			
+		{	
 			int value = item.getValue();
-//System.out.println("The value is: " + value);			
-			int column = getColumnAdjacent(item);
-//System.out.println("The column adjacent is " + column);
-			int row = getRowAdjacent(item);
-//System.out.println("The row adjacent is: " + row);
-			if((value == column) || (value == row))
+			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
 			{
 				item.setRemove();
 			}
+		}
+	}
+	
+	private void removeMarked()
+	{
+		ArrayList<Piece> marked = getAllRemove();
+		for(Piece item : marked)
+		{
+			item.setType(Piece.Type.EMPTY);
 		}
 	}
 	
