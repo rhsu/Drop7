@@ -1,5 +1,6 @@
 package tutorial;
 
+import Utilities.Constants;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,7 +12,7 @@ public class Test
 		Scanner scanner = new Scanner(System.in);
 		while(true)
 		{
-			Pattern pattern = Pattern.compile("[[1-7[E]][\\s]]{13}");
+			Pattern pattern = Pattern.compile(Constants.REGEX);
 			System.out.println("Enter input string to match");
 			Matcher matcher = pattern.matcher(scanner.nextLine());
 			
