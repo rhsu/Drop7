@@ -1,7 +1,7 @@
 package UserInterfaces;
 
 import GameObjects.Game;
-import PublicLibrary.PublicFunctions;
+import Utilities.PublicFunctions;
 import java.util.Scanner;
 
 public class TerminalGame extends Game
