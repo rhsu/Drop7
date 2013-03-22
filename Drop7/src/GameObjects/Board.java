@@ -225,7 +225,6 @@ public class Board extends BoardBase
 		ArrayList<Piece> marked = getAllRemove();
 		for(Piece item : marked)
 		{
-			System.out.println("here");
 			item.setType(Piece.Type.EMPTY);
 		}
 	}

@@ -114,7 +114,6 @@ public class TestBoard extends Board
 		b.removeMarked();
 		//ArrayList<Piece> ListOfRemovedPieces = b.getAllRemove();
 		
-		
 		System.out.println(b);
 		
 	}
