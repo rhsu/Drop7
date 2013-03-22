@@ -179,14 +179,14 @@ public class Board extends BoardBase
 				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
 				
-				markForRemoval(current);				
+				checkForRemoval(current);				
 				return true;
 			}
 		}
 		return false;
 	}
         
-	protected void markForRemoval(Piece p)
+	protected void checkForRemoval(Piece p)
 	{
 		ArrayList<Piece> rows = getAllInRow(p);
 		ArrayList<Piece> columns = getAllInColumn(p);
@@ -199,6 +199,17 @@ public class Board extends BoardBase
 				item.setRemove();
 			}
 		}
+		
+		for(Piece item: columns)
+		{
+			int value = item.getValue();
+			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
+			{
+				item.setRemove();
+			}
+		}
+		
+		removeMarked();
 	}
 	
 	protected void removeMarked()

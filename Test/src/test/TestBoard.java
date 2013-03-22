@@ -69,9 +69,7 @@ public class TestBoard extends Board
 		}
 	}
 	
-	
-	
-	public static void main(String[] args)
+	public static void m1()
 	{
 		TestBoard b = TestBoard.getTest1();
 		Piece p = b.pieceAt(6, 3);
@@ -80,11 +78,35 @@ public class TestBoard extends Board
 		
 		System.out.println("Remove is: " + b.getAllRemove());
 		
-		b.markForRemoval(p);
+		b.checkForRemoval(p);
 		
 		System.out.println(b);
 		System.out.println("Calling remove");
 		b.removeMarked();	
 		System.out.println(b);
+	}
+	
+	public static void main(String[] args)
+	{
+		//create a board
+		TestBoard b = TestBoard.getTest1();
+		
+		System.out.println(b);
+		
+		//insert at position 2 a value of 1
+		/*
+		 * Looks like this
+		 * 
+		 * 1
+		 * 2
+		 */
+		
+		b.insert(2, 1);
+		b.removeMarked();
+		//ArrayList<Piece> ListOfRemovedPieces = b.getAllRemove();
+		
+		
+		System.out.println(b);
+		
 	}
 }

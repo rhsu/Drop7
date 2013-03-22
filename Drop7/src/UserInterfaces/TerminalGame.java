@@ -26,12 +26,12 @@ public class TerminalGame extends Game
 	 */
 	public void menu()
 	{
-                int random = PublicFunctions.getRandomNumberPiece();
+        int random = PublicFunctions.getRandomNumberPiece();
 		while(true)
 		{			
 			builder.setLength(0);
 			
-                        //Print out the status
+			//Print out the status
 			if(random == 8)
 			{
 				builder.append("The new piece is mystery piece").append("\n");
@@ -44,7 +44,7 @@ public class TerminalGame extends Game
 			System.out.println(builder);
 			
                         
-                        //Prompt starts here
+			//Prompt starts here
 			System.out.println("Where do you want to place the piece?");
 			
 			String position = scanner.nextLine();
@@ -68,7 +68,7 @@ public class TerminalGame extends Game
 					System.exit(0);
 				}
 				System.out.println("Inserting piece...");
-                                random = PublicFunctions.getRandomNumberPiece();
+				random = PublicFunctions.getRandomNumberPiece();
 			}
 			else
 			{
