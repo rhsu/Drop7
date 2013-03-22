@@ -178,7 +178,6 @@ public class Board extends BoardBase
 			{				
 				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
-				
 				markForRemoval(current);				
 				return true;
 			}
@@ -201,11 +200,12 @@ public class Board extends BoardBase
 		}
 	}
 	
-	protected void removeMarked()
+	public void removeMarked()
 	{
 		ArrayList<Piece> marked = getAllRemove();
 		for(Piece item : marked)
 		{
+			System.out.println("here");
 			item.setType(Piece.Type.EMPTY);
 		}
 	}
