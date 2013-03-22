@@ -25,6 +25,16 @@ public class TestBoard extends Board
 		return b;
 	}
 	
+	public static TestBoard getEmptyBoard()
+	{
+		TestBoard b = new TestBoard();
+		for(int i = 0; i < 7; i++)
+		{
+			b.pieceAt(6, i).setType(Piece.Type.EMPTY);
+		}
+		return b;
+	}
+	
 	public static TestBoard getTest1()
 	{
 		TestBoard b = new TestBoard();
@@ -95,7 +105,7 @@ public class TestBoard extends Board
 		System.out.println(b);
 	}
 	
-	public static void main(String[] args)
+	public static void m2()
 	{
 		//create a board
 		TestBoard b = TestBoard.getTest1();
@@ -123,5 +133,15 @@ public class TestBoard extends Board
 		ArrayList<Piece> ListOfRemovedPieces = b.getAllRemove();
 		
 		System.out.println(ListOfRemovedPieces);
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		TestBoard b = TestBoard.getEmptyBoard();
+		System.out.println(b);
+		
+		b.insert(1, 1);
+		System.out.println(b);
 	}
 }
