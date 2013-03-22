@@ -200,7 +200,7 @@ public class Board extends BoardBase
 			int value = item.getValue();
 			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
 			{
-				item.setRemove();
+				item.setRemove(true);
 			}
 		}
 		
@@ -209,7 +209,7 @@ public class Board extends BoardBase
 			int value = item.getValue();
 			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
 			{
-				item.setRemove();
+				item.setRemove(true);
 			}
 		}
 		
@@ -226,6 +226,7 @@ public class Board extends BoardBase
 		for(Piece item : marked)
 		{
 			item.setType(Piece.Type.EMPTY);
+			item.setRemove(false);
 		}
 	}
 	

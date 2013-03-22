@@ -107,12 +107,12 @@ public class Piece
 	{
             return this.remove;
 	}
-        
-	public void setRemove()
+    
+	public void setRemove(boolean b)
 	{
             this.remove = true;
-        }
-        
+    }
+	        
 	//</editor-fold>
 	
 	/**

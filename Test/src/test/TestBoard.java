@@ -64,7 +64,7 @@ public class TestBoard extends Board
 
 			if((value == column) || (value == row))
 			{
-				item.setRemove();
+				item.setRemove(true);
 			}
 			
 			if(debugMode)
@@ -112,9 +112,16 @@ public class TestBoard extends Board
 		
 		b.insert(2, 1);
 		b.removeMarked();
-		//ArrayList<Piece> ListOfRemovedPieces = b.getAllRemove();
+
 		
 		System.out.println(b);
 		
+		b.insert(2,1);
+		
+		System.out.println(b);
+		
+		ArrayList<Piece> ListOfRemovedPieces = b.getAllRemove();
+		
+		System.out.println(ListOfRemovedPieces);
 	}
 }
