@@ -69,8 +69,6 @@ public class TerminalGame extends Game
 				}
 				System.out.println("Inserting piece...");
 				
-				board.removeMarked();
-				
 				//Generate random number for next interation
 				random = PublicFunctions.getRandomNumberPiece();
 			}

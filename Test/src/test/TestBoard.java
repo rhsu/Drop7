@@ -45,44 +45,54 @@ public class TestBoard extends Board
 		return b;
 	}
 	
-	public void testCheck(Piece p)
+	public void testCheck(Piece p, boolean debugMode)
 	{
 		ArrayList<Piece> rows = getAllInRow(p);
 		ArrayList<Piece> columns = getAllInColumn(p);
 		
-		System.out.println("rows is : " + rows);
-		System.out.println("columns is : " + columns);
-		
+		if(debugMode)
+		{	
+			System.out.println("rows is : " + rows);
+			System.out.println("columns is : " + columns);
+		}
+			
 		for(Piece item : rows)
 		{
-			System.out.println("This is item: " + item);			
 			int value = item.getValue();
-			System.out.println("The value is: " + value);			
 			int column = getColumnAdjacent(item);
-			System.out.println("The column adjacent is " + column);
 			int row = getRowAdjacent(item);
-			System.out.println("The row adjacent is: " + row);
+
 			if((value == column) || (value == row))
 			{
 				item.setRemove();
 			}
-		}
+			
+			if(debugMode)
+			{
+				System.out.println("This is item: " + item);	
+				System.out.println("The value is: " + value);	
+				System.out.println("The column adjacent is " + column);
+				System.out.println("The row adjacent is: " + row);
+			}
+
+		}	
 	}
 	
 	public static void main(String[] args)
 	{
 		TestBoard b = TestBoard.getTest1();
-		Piece p = b.pieceAt(6, 3);
+		System.out.println(b);
 		
-		b.testCheck(p);
+		Piece p = b.pieceAt(6, 3);
+		b.testCheck(p, false);
 		
 		System.out.println("Remove is: " + b.getAllRemove());
 		
-		b.markForRemoval(p);
+		/*b.markForRemoval(p);
 		
 		System.out.println(b);
 		System.out.println("Calling remove");
 		b.removeMarked();	
-		System.out.println(b);
+		System.out.println(b);*/
 	}
 }
