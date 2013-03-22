@@ -69,8 +69,6 @@ public class TestBoard extends Board
 		}
 	}
 	
-	
-	
 	public static void main(String[] args)
 	{
 		TestBoard b = TestBoard.getTest1();
