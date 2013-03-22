@@ -82,20 +82,31 @@ public class Piece
                 }
 	}
 	
+	/**
+	 * @return the horizontal
+	 */
 	public int getHorizontal()
 	{
 		return this.horizontal;
 	}
 	
+	/**
+	 * 
+	 * @return the vertical 
+	 */
 	public int getVertical()
 	{
 		return this.vertical;
 	}
         
+	/**
+	 * 
+	 * @return the remove boolean
+	 */
 	public boolean getRemove()
 	{
             return this.remove;
-        }
+	}
         
 	public void setRemove()
 	{
