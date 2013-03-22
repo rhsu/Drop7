@@ -21,6 +21,11 @@ public class BoardBase
 		return pieceAt(i, j - 1);
 	}
 	
+	/**
+	 * 
+	 * @param p Piece
+	 * @return The piece to the left of the given piece
+	 */
 	public Piece getLeftPiece(Piece p)
 	{
 		return pieceAt(p.getHorizontal(), p.getVertical() - 1);
@@ -37,6 +42,11 @@ public class BoardBase
 		return pieceAt(i, j + 1);
 	}
 	
+	/**
+	 * 
+	 * @param p Piece
+	 * @return The piece to the right of the given piece
+	 */
 	public Piece getRightPiece(Piece p)
 	{
 		return pieceAt(p.getHorizontal(), p.getVertical() + 1);
@@ -53,6 +63,11 @@ public class BoardBase
 		return pieceAt(i - 1, j);
 	}
 	
+	/**
+	 * 
+	 * @param p piece
+	 * @return The piece above the given piece
+	 */
 	public Piece getUpPiece(Piece p)
 	{
 		return pieceAt(p.getHorizontal() - 1, p.getVertical());
@@ -69,6 +84,11 @@ public class BoardBase
 		return pieceAt(i + 1, j);
 	}
 	
+	/**
+	 * 
+	 * @param p piece
+	 * @return The piece below the given piece
+	 */
 	public Piece getDownPiece(Piece p)
 	{
 		return pieceAt(p.getHorizontal() + 1, p.getVertical());

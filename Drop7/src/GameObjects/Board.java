@@ -6,12 +6,12 @@ public class Board extends BoardBase
 {
    //<editor-fold defaultstate="collapsed" desc="RETRIEVAL FUNCTIONS">
 	/**
-         * calculates the number of adjacent pieces in the same (horizontal) row as a
-         * given parameter piece (Including itself: e.g. A piece with no pieces next to it
-         * will return a value of 1)
-         * @param p the parameter piece to perform the calculation on
-         * @return the number of pieces that are in the same row as the parameter piece.
-         */
+	* calculates the number of adjacent pieces in the same (horizontal) row as a
+	* given parameter piece (Including itself: e.g. A piece with no pieces next to it
+	* will return a value of 1)
+	* @param p the parameter piece to perform the calculation on
+	* @return the number of pieces that are in the same row as the parameter piece.
+	*/
 	public int getRowAdjacent(Piece p)
 	{
 		if((p == null) || (p.getType() == Piece.Type.EMPTY))
@@ -41,12 +41,12 @@ public class Board extends BoardBase
 	}
 	
 	/**
-         * calculates the number of adjacent pieces in the same (vertical) column as a
-         * given parameter piece (Including itself: e.g. A piece with no pieces next to it
-         * will return a value of 1)
-         * @param p the parameter piece to perform the calculation on
-         * @return the number of pieces that are in the same column as the parameter piece.
-         */
+	* calculates the number of adjacent pieces in the same (vertical) column as a
+	* given parameter piece (Including itself: e.g. A piece with no pieces next to it
+	* will return a value of 1)
+	* @param p the parameter piece to perform the calculation on
+	* @return the number of pieces that are in the same column as the parameter piece.
+	*/
 	public int getColumnAdjacent(Piece p)
 	{
 		if((p == null) || (p.getType() == Piece.Type.EMPTY))
@@ -178,7 +178,6 @@ public class Board extends BoardBase
 			{				
 				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
-				
 				checkForRemoval(current);				
 				return true;
 			}
@@ -186,6 +185,11 @@ public class Board extends BoardBase
 		return false;
 	}
         
+
+	/**
+	 * Given a piece, this functions will check if a piece should be removed
+	 * @param p The piece to perform the operation on
+	 */
 	protected void checkForRemoval(Piece p)
 	{
 		ArrayList<Piece> rows = getAllInRow(p);
@@ -212,11 +216,16 @@ public class Board extends BoardBase
 		removeMarked();
 	}
 	
+	/**
+	 * Searches the entire board for all removed pieces.
+	 * Removes all the removed pieces on the board.
+	 */
 	protected void removeMarked()
 	{
 		ArrayList<Piece> marked = getAllRemove();
 		for(Piece item : marked)
 		{
+			System.out.println("here");
 			item.setType(Piece.Type.EMPTY);
 		}
 	}

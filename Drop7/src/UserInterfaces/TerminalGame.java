@@ -26,7 +26,8 @@ public class TerminalGame extends Game
 	 */
 	public void menu()
 	{
-        int random = PublicFunctions.getRandomNumberPiece();
+		int random = PublicFunctions.getRandomNumberPiece();
+
 		while(true)
 		{			
 			builder.setLength(0);
@@ -68,6 +69,8 @@ public class TerminalGame extends Game
 					System.exit(0);
 				}
 				System.out.println("Inserting piece...");
+
+				//Generate random number for next interation
 				random = PublicFunctions.getRandomNumberPiece();
 			}
 			else
