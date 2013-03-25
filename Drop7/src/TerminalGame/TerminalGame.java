@@ -1,4 +1,4 @@
-package UserInterfaces;
+package TerminalGame;
 
 import GameObjects.Game;
 import Utilities.PublicFunctions;
