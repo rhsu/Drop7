@@ -178,7 +178,6 @@ public class Board extends BoardBase
 			Piece current = pieceAt(index, position);
 			if(current.getType() == Piece.Type.EMPTY)
 			{				
-				//current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
 				checkForRemoval(current);				
 				return true;
@@ -215,8 +214,6 @@ public class Board extends BoardBase
 			}
 		}
 		
-		System.out.println("Now inside checkforremove");
-		System.out.println("The number of removed is " + this.getAllRemove());
 		removeMarked();
 	}
 	
