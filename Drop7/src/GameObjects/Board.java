@@ -231,9 +231,7 @@ public class Board extends BoardBase
 		{
 			System.out.println("here???");
 			item.setType(Piece.Type.EMPTY);
-			//HERE IS the problem
-			//the item is being set reomved as false i nthe linked list
-			//item.setRemove(false);
+			item.setRemove(false);
 		}
 	}
 	

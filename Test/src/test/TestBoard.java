@@ -157,6 +157,7 @@ public class TestBoard extends Board
 		{
 			input.nextLine();
 			b.insert(1, 2);
+			System.out.println("Inserted completed...");
 			ArrayList<Piece> test = b.getAllRemove();
 			System.out.println("The size of the list of removed is " +  test.size());
 			System.out.println(b);
