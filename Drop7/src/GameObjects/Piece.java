@@ -38,15 +38,17 @@ public class Piece
 	{
 		switch(value)
 		{
-			//set the piece to be mystery. This happens during piece generation
+			//makes the piece a mystery piece
 			case 8:
 				this.type = Type.MYSTERY1;
 				this.value = MYSTERY_STAGE_1;
 				break;
+			//makes the piece an empty piece
 			case EMPTY:
 				this.type = Type.EMPTY;
 				this.value = EMPTY;
 				break;
+			//makes the piece a set piece
 			default:
 				this.type = Type.SET;
 				this.value = value;
@@ -110,7 +112,7 @@ public class Piece
     
 	public void setRemove(boolean b)
 	{
-            this.remove = true;
+            this.remove = b;
     }
 	        
 	//</editor-fold>

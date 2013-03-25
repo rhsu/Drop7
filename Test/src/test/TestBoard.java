@@ -3,6 +3,7 @@ package test;
 import GameObjects.Board;
 import GameObjects.Piece;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -52,6 +53,16 @@ public class TestBoard extends Board
                 
 		//set 6 - 2 to empty
 		b.pieceAt(6,2).setType(Piece.Type.EMPTY);
+		return b;
+	}
+	
+	public static TestBoard getTest2()
+	{
+		TestBoard b = new TestBoard();
+		for (int i = 0; i< 7; i++)
+		{
+			b.pieceAt(6,i).setValue(2);
+		}
 		return b;
 	}
 	
@@ -138,10 +149,17 @@ public class TestBoard extends Board
 	
 	public static void main(String[] args)
 	{
-		TestBoard b = TestBoard.getEmptyBoard();
+		Scanner input = new Scanner(System.in);
+		TestBoard b = TestBoard.getTest2();
 		System.out.println(b);
 		
-		b.insert(1, 1);
-		System.out.println(b);
+		while(true)
+		{
+			input.nextLine();
+			b.insert(1, 2);
+			ArrayList<Piece> test = b.getAllRemove();
+			System.out.println("The size of the list of removed is " +  test.size());
+			System.out.println(b);
+		}
 	}
 }

@@ -99,7 +99,7 @@ public class BoardBase
 	/**
 	 * The base constructor for building a Drop7 board.
 	 * @see Board Recommended to use this class when constructing a board 
-	 *			  since it contains the necessary functions for playing the Drop7 Game
+	 * since it contains the necessary functions for playing the Drop7 Game
 	 */
 	public BoardBase()
 	{

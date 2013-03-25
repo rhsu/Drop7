@@ -157,6 +157,8 @@ public class Board extends BoardBase
 		
 	/**
 	 * Given a position, this function will create a new piece and update the piece
+	 * If the insert is successful, then a check will be performed to determine if 
+	 * @see checkForRemoval, removeMarked
 	 * @param position The column number to insert the piece. Do not use with array indexes
 	 * @return True if the insert was successful, else returns false
 	 * @throws IllegalArgumentException If an incorrect position or value is given+
@@ -176,7 +178,7 @@ public class Board extends BoardBase
 			Piece current = pieceAt(index, position);
 			if(current.getType() == Piece.Type.EMPTY)
 			{				
-				current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
+				//current.setType(value == 8 ? Piece.Type.MYSTERY1 : Piece.Type.SET);	
 				current.setValue(value);
 				checkForRemoval(current);				
 				return true;
@@ -213,6 +215,8 @@ public class Board extends BoardBase
 			}
 		}
 		
+		System.out.println("Now inside checkforremove");
+		System.out.println("The number of removed is " + this.getAllRemove());
 		removeMarked();
 	}
 	
@@ -225,8 +229,11 @@ public class Board extends BoardBase
 		ArrayList<Piece> marked = getAllRemove();
 		for(Piece item : marked)
 		{
+			System.out.println("here???");
 			item.setType(Piece.Type.EMPTY);
-			item.setRemove(false);
+			//HERE IS the problem
+			//the item is being set reomved as false i nthe linked list
+			//item.setRemove(false);
 		}
 	}
 	
