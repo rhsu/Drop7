@@ -150,13 +150,13 @@ public class TestBoard extends Board
 	public static void main(String[] args)
 	{
 		Scanner input = new Scanner(System.in);
-		TestBoard b = TestBoard.getTest2();
+		TestBoard b = TestBoard.getEmptyBoard();
 		System.out.println(b);
 		
 		while(true)
 		{
 			input.nextLine();
-			b.insert(1, 2);
+			b.insert(1, 3);
 			System.out.println("Inserted completed...");
 			ArrayList<Piece> test = b.getAllRemove();
 			System.out.println("The size of the list of removed is " +  test.size());
