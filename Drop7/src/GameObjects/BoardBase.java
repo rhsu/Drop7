@@ -3,9 +3,15 @@ package GameObjects;
 import Utilities.PublicFunctions;
 import java.util.ArrayList;
 
+/**
+ *The base board class, having to deal with retrieval functions and navigating to pieces
+ */
 public class BoardBase 
 {
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
+	/**
+	 *The 2D array representing the actual board
+	 */
 	protected Piece[][] board;
 	//</editor-fold>
 	
@@ -272,6 +278,10 @@ public class BoardBase
 		return null;
 	}
 		
+	/**
+	 *
+	 * @return a string representing the 
+	 */
 	@Override
 	public String toString()
 	{
@@ -287,6 +297,10 @@ public class BoardBase
 		return builder.toString();
 	}
 	
+	/**
+	 *
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		Board b = new Board();

@@ -3,14 +3,23 @@ package GameObjects;
 import Utilities.PublicFunctions;
 
 /**
- *
- * @author RHsu
+ *The basic piece object. Each piece represents a "piece" in the game.
  */
 public class Piece
 {
 	//<editor-fold defaultstate="collapsed" desc="CONSTANTS">
+	/**
+	 *Used to indicate a piece value when it's in the Myserty 1 stage
+	 */
 	public static final int MYSTERY_STAGE_1 = -1;
+	/**
+	 * The mystery 2 stage follows the Mystery 1 stage.
+	 *Used to indicate a piece value when it's in the Myserty 2 stage
+	 */
 	public static final int MYSTERY_STAGE_2 = -2;
+	/**
+	 *Used to indicate a piece value when it's in the Empty stage
+	 */
 	public static final int EMPTY = 0;
 	//</editor-fold>
 	
@@ -110,6 +119,10 @@ public class Piece
             return this.remove;
 	}
     
+	/**
+	 *
+	 * @param b
+	 */
 	public void setRemove(boolean b)
 	{
             this.remove = b;
@@ -122,9 +135,21 @@ public class Piece
 	 */
 	public enum Type
 	{
+		/**
+		 *
+		 */
 		MYSTERY1,
+		/**
+		 *
+		 */
 		MYSTERY2,
+		/**
+		 *
+		 */
 		SET,
+		/**
+		 *
+		 */
 		EMPTY
 	}
 	
@@ -158,6 +183,10 @@ public class Piece
 		}
 	}
 	
+	/**
+	 *
+	 * @return
+	 */
 	@Override
 	public String toString()
 	{
@@ -174,6 +203,10 @@ public class Piece
 		}
 	}
 
+	/**
+	 *
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 

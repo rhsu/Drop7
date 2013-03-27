@@ -2,6 +2,9 @@ package GameObjects;
 
 import java.util.ArrayList;
 
+/**
+ *A super class of Board Base, which contains methods having to do with the game.
+ */
 public class Board extends BoardBase
 {    
 	/**
@@ -15,8 +18,8 @@ public class Board extends BoardBase
 	/**
 	 * Given a position, this function will create a new piece and update the piece
 	 * If the insert is successful, then a check will be performed to determine if 
-	 * @see checkForRemoval, removeMarked
 	 * @param position The column number to insert the piece. Do not use with array indexes
+	 * @param value 
 	 * @return True if the insert was successful, else returns false
 	 * @throws IllegalArgumentException If an incorrect position or value is given+
 	 */
@@ -89,6 +92,10 @@ public class Board extends BoardBase
 		}
 	}
 	
+	/**
+	 *
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{		
 

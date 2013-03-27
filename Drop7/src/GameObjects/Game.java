@@ -6,6 +6,9 @@ package GameObjects;
 public class Game 
 {
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
+	/**
+	 *The game base class
+	 */
 	protected Board board;
 	//</editor-fold>
 	
@@ -17,7 +20,10 @@ public class Game
 		board = new Board();
 	}
 	
-	
+	/**
+	 *Main Method for testing
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		Game g = new Game();
