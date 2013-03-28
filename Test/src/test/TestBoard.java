@@ -11,12 +11,19 @@ import java.util.Scanner;
  */
 public class TestBoard extends Board
 {
-	public TestBoard()
+	/**
+	 * Just calls the base constructor
+	 */
+	TestBoard()
 	{
 		super();
 	}
     
-	public static TestBoard getConsecutiveBoard()
+	/**
+	 * Creates a board that looks like this 1 2 3 4 5 6 7
+	 * @return a board of consecutive values
+	 */
+	static TestBoard getConsecutiveBoard()
 	{
 		TestBoard b = new TestBoard();
 		for(int i = 0; i < 7; i++)
@@ -26,7 +33,11 @@ public class TestBoard extends Board
 		return b;
 	}
 	
-	public static TestBoard getEmptyBoard()
+	/**
+	 * Creates a board that is empty
+	 * @return an empty board
+	 */
+	static TestBoard getEmptyBoard()
 	{
 		TestBoard b = new TestBoard();
 		for(int i = 0; i < 7; i++)
@@ -36,7 +47,11 @@ public class TestBoard extends Board
 		return b;
 	}
 	
-	public static TestBoard getTest1()
+	/**
+	 * This test was used to create a board but with a couple of values changed
+	 * @return a board
+	 */
+	static TestBoard getTest1()
 	{
 		TestBoard b = new TestBoard();
 		for(int i = 0; i < 7; i++)
@@ -56,7 +71,11 @@ public class TestBoard extends Board
 		return b;
 	}
 	
-	public static TestBoard getTest2()
+	/**
+	 * This test was used to create a board of all 2s
+	 * @return 
+	 */
+	static TestBoard getTest2()
 	{
 		TestBoard b = new TestBoard();
 		for (int i = 0; i< 7; i++)
@@ -65,8 +84,15 @@ public class TestBoard extends Board
 		}
 		return b;
 	}
-	
-	public void testCheck(Piece p, boolean debugMode)
+
+	/**
+	 * An extender test method for board
+	 * Takes a given piece and performs a check on the row
+	 * Flags all pieces in the row if they should be removed.
+	 * @param p the piece to perform the check on
+	 * @param debugMode whether or not to print
+	 */
+	void testCheck(Piece p, boolean debugMode)
 	{
 		ArrayList<Piece> rows = getAllInRow(p);
 		ArrayList<Piece> columns = getAllInColumn(p);
@@ -95,11 +121,13 @@ public class TestBoard extends Board
 				System.out.println("The column adjacent is " + column);
 				System.out.println("The row adjacent is: " + row);
 			}
-
 		}	
 	}
 	
-	public static void m1()
+	/**
+	 * Old main. This was used to test the method checkForRemoval on a piece
+	 */
+	static void m1()
 	{
 		TestBoard b = TestBoard.getTest1();
 		System.out.println(b);
@@ -116,7 +144,10 @@ public class TestBoard extends Board
 		System.out.println(b);
 	}
 	
-	public static void m2()
+	/**
+	 * Old main was used to test a bug with the insert
+	 */
+	static void m2()
 	{
 		//create a board
 		TestBoard b = TestBoard.getTest1();
@@ -133,7 +164,6 @@ public class TestBoard extends Board
 		
 		b.insert(2, 1);
 		b.removeMarked();
-
 		
 		System.out.println(b);
 		
@@ -146,8 +176,10 @@ public class TestBoard extends Board
 		System.out.println(ListOfRemovedPieces);
 	}
 	
-	
-	public static void main(String[] args)
+	/**
+	 * Old main was used to test a bug with the insert
+	 */
+	static void m3()
 	{
 		Scanner input = new Scanner(System.in);
 		TestBoard b = TestBoard.getEmptyBoard();
@@ -162,5 +194,10 @@ public class TestBoard extends Board
 			System.out.println("The size of the list of removed is " +  test.size());
 			System.out.println(b);
 		}
+	}
+	
+	public static void main(String[] args)
+	{
+
 	}
 }
