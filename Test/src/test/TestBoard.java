@@ -198,6 +198,8 @@ public class TestBoard extends Board
 	
 	public static void main(String[] args)
 	{
-
+		System.out.println("Printing empty board");
+		TestBoard b = getEmptyBoard();
+		System.out.println(b);
 	}
 }
