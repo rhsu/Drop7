@@ -286,6 +286,7 @@ public class BoardBase
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
+		builder.append("==============");
 		for (int i = 0; i < 7; i++)
 		{
 			for (int j = 0 ; j < 7; j++)
@@ -294,6 +295,7 @@ public class BoardBase
 			}
 			builder.append("\n");
 		}
+		builder.append("==============");
 		return builder.toString();
 	}
 	
