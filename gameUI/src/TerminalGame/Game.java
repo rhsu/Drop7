@@ -1,4 +1,7 @@
-package GameObjects;
+package TerminalGame;
+
+import GameObjects.Board;
+import boardEditorCore.StaticBoards;
 
 /**
  * The class to play to play the game.
@@ -17,7 +20,7 @@ public class Game
 	 */
 	public Game()
 	{
-		board = new Board();
+		board = StaticBoards.getEmptyBoard();
 	}
 	
 	/**

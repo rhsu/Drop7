@@ -1,4 +1,4 @@
-package coreLibrary;
+package boardEditorCore;
 
 /**
  *The backend of the Board Editor
