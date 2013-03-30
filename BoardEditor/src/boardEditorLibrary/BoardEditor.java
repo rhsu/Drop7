@@ -1,4 +1,4 @@
-package boardEditor;
+package boardEditorLibrary;
 
 import GameObjects.Board;
 
