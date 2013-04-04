@@ -162,10 +162,7 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
-/PublicFunctions/nbproject/private/
-/Drop7Swing/nbproject/private/
-/test/nbproject/private/
-/test_/nbproject/private/
 /Test/nbproject/private/
 /BoardEditor/nbproject/private/
 /gameUI/nbproject/private/
+/Drop7/nbproejct/private
