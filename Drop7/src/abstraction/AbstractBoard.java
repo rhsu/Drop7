@@ -99,14 +99,7 @@ public abstract class AbstractBoard <T>
 	 */
 	public AbstractBoard()
 	{
-		for (int i = 7 ; i < 7; i++)
-		{
-			//TODO: test if this works
-			for(int j = 0; j < 7; j++)
-			{
-				board[i][j] = (T) new Object();
-			}
-		}
+		//TODO: Research how to do generic array allocation seems complicated
 	}
 	
 	public T pieceAt(int i, int j)
@@ -122,7 +115,7 @@ public abstract class AbstractBoard <T>
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
-		builder.append("==============");
+		builder.append("==============").append("\n");
 		for (int i = 0; i < 7; i++)
 		{
 			for (int j = 0 ; j < 7; j++)
