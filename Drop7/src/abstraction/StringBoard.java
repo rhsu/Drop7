@@ -1,6 +1,6 @@
 package abstraction;
 
-public class StringBoard extends AbstractBoard<String>
+/*public class StringBoard extends AbstractBoard<String>
 {
 	//TODO: Some testing
 	public StringBoard()
@@ -20,4 +20,4 @@ public class StringBoard extends AbstractBoard<String>
 		AbstractBoard b = new StringBoard();
 		System.out.println(b);
 	}
-}
+}*/

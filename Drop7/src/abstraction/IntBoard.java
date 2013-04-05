@@ -1,6 +1,6 @@
 package abstraction;
 
-public class IntBoard extends AbstractBoard<Integer>
+/*public class IntBoard extends AbstractBoard<Integer>
 {
 	//TODO: some testing
 	public IntBoard()
@@ -20,4 +20,4 @@ public class IntBoard extends AbstractBoard<Integer>
 		AbstractBoard b = new IntBoard();
 		System.out.println(b);
 	}
-}
+}*/
