@@ -17,7 +17,7 @@ public class IntBoard extends AbstractBoard<Integer>
 	
 	public static void main(String[] args)
 	{
-		IntBoard b = new IntBoard();
+		AbstractBoard b = new IntBoard();
 		System.out.println(b);
 	}
 }
