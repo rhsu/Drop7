@@ -9,12 +9,12 @@ public class Piece
 {
 	//<editor-fold defaultstate="collapsed" desc="CONSTANTS">
 	/**
-	 *Used to indicate a piece value when it's in the Myserty 1 stage
+	 *Used to indicate a piece value when it's in the Mystery 1 stage
 	 */
 	public static final int MYSTERY_STAGE_1 = -1;
 	/**
 	 * The mystery 2 stage follows the Mystery 1 stage.
-	 *Used to indicate a piece value when it's in the Myserty 2 stage
+	 *Used to indicate a piece value when it's in the Mystery 2 stage
 	 */
 	public static final int MYSTERY_STAGE_2 = -2;
 	/**
