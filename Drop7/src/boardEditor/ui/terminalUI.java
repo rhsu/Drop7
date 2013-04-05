@@ -1,4 +1,4 @@
-package ui;
+package boardEditor.ui;
 
 /**
  *The terminal UI for the Drop7 Board Editor

@@ -1,4 +1,4 @@
-package boardEditorCore;
+package boardEditor.core;
 
 import gameObjects.Board;
 import gameObjects.Piece;

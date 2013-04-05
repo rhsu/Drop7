@@ -1,7 +1,7 @@
-package terminalGame;
+package gameObjects;
 
 import gameObjects.Board;
-import boardEditorCore.StaticBoards;
+import boardEditor.core.StaticBoards;
 
 /**
  * The class to play to play the game.

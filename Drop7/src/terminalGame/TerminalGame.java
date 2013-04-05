@@ -1,5 +1,6 @@
 package terminalGame;
 
+import gameObjects.Game;
 import utilities.PublicFunctions;
 import java.util.Scanner;
 

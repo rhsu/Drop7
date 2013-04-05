@@ -1,4 +1,4 @@
-package tutorial;
+package boardEditor.tutorial;
 
 import utilities.Constants;
 import java.util.Scanner;
