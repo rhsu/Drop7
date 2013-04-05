@@ -1,6 +1,6 @@
 package tutorial;
 
-import Utilities.Constants;
+import utilities.Constants;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

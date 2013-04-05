@@ -1,6 +1,6 @@
-package TerminalGame;
+package terminalGame;
 
-import GameObjects.Board;
+import gameObjects.Board;
 import boardEditorCore.StaticBoards;
 
 /**

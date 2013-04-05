@@ -1,6 +1,6 @@
 package tutorial;
 		
-import Utilities.Constants;
+import utilities.Constants;
 
 public class TestMatches 
 {

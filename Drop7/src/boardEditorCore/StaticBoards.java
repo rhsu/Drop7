@@ -1,7 +1,7 @@
 package boardEditorCore;
 
-import GameObjects.Board;
-import GameObjects.Piece;
+import gameObjects.Board;
+import gameObjects.Piece;
 
 /**
  *Static functions that the board editor returns

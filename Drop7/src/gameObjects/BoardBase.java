@@ -1,6 +1,6 @@
-package GameObjects;
+package gameObjects;
 
-import Utilities.PublicFunctions;
+import utilities.PublicFunctions;
 import java.util.ArrayList;
 
 /**

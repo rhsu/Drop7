@@ -1,6 +1,6 @@
-package TerminalGame;
+package terminalGame;
 
-import Utilities.PublicFunctions;
+import utilities.PublicFunctions;
 import java.util.Scanner;
 
 public class TerminalGame extends Game
