@@ -1,4 +1,6 @@
-package abstraction;
+package abstraction.testObjects;
+
+import abstraction.AbstractPiece;
 
 public class IntPiece extends AbstractPiece<Integer>
 {
