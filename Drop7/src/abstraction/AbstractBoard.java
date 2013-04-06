@@ -1,6 +1,6 @@
 package abstraction;
 
-import utilities.PublicFunctions;
+import abstraction.miscellaneous.PublicFunctions;
 
 public abstract class AbstractBoard <T extends AbstractPiece>
 {
