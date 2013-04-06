@@ -4,11 +4,11 @@ public abstract class AbstractPiece<T>
 {
 	private int horizontal;
 	private int vertical;
-	private T piece;
+	protected T piece;
 	
-	public AbstractPiece(T t, int i, int j)
+	public AbstractPiece(T t,int i, int j)
 	{
-		piece = (T) new Object();
+		//piece = (T) new Object(); //commenting out because method is unsafe
 		this.horizontal = i;
 		this.vertical = i;
 	}
