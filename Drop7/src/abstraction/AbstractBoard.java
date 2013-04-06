@@ -117,7 +117,6 @@ public abstract class AbstractBoard <T extends AbstractPiece>
 		//TODO: Research how to do generic array allocation seems complicated
 	}
 	
-	
 	@Override
 	public String toString()
 	{
