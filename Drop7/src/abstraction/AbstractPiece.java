@@ -39,5 +39,4 @@ public abstract class AbstractPiece<T>
 	{
 		return t.toString();
 	}
-		
 }
