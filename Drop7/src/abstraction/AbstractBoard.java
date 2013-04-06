@@ -2,7 +2,7 @@ package abstraction;
 
 import utilities.PublicFunctions;
 
-public abstract class AbstractBoard <T>
+public abstract class AbstractBoard <T extends AbstractPiece>
 {
 	protected T[][] board;
 		
@@ -26,7 +26,7 @@ public abstract class AbstractBoard <T>
 	 */
 	public T getLeftPiece(T p)
 	{
-		return p; //pieceAt(p.getHorizontal(), p.getVertical() - 1);
+		return pieceAt(p.getHorizontal(), p.getVertical() - 1);
 	}
 	
 	/**
@@ -47,7 +47,7 @@ public abstract class AbstractBoard <T>
 	 */
 	public T getRightPiece(T p)
 	{
-		return p;// pieceAt(p.getHorizontal(), p.getVertical() + 1);
+		return pieceAt(p.getHorizontal(), p.getVertical() + 1);
 	}
 	
 	/**
@@ -68,7 +68,7 @@ public abstract class AbstractBoard <T>
 	 */
 	public T getUpPiece(T p)
 	{
-		return p;// pieceAt(p.getHorizontal() - 1, p.getVertical());
+		return pieceAt(p.getHorizontal() - 1, p.getVertical());
 	}
 	
 	/**
@@ -83,14 +83,29 @@ public abstract class AbstractBoard <T>
 	}
 	
 	/**
-	 * 
 	 * @param p piece
 	 * @return The piece below the given piece
 	 */
 	public T getDownPiece(T p)
 	{
-		return p;//pieceAt(p.getHorizontal() + 1, p.getVertical());
+		return pieceAt(p.getHorizontal() + 1, p.getVertical());
 	}
+	
+	/**
+	 * Retrieves a Piece from the board with the given indexes
+	 * @param i index
+	 * @param j index
+	 * @return The piece from the board. Null if no piece exists
+	 */
+	public T pieceAt(int i, int j)
+	{
+		if (PublicFunctions.isValidPosition(i) && PublicFunctions.isValidPosition(j)) 
+		{
+			return board[i][j];
+		}
+		return null;
+	}
+	
 	
 	//</editor-fold>
 	
@@ -102,14 +117,6 @@ public abstract class AbstractBoard <T>
 		//TODO: Research how to do generic array allocation seems complicated
 	}
 	
-	public T pieceAt(int i, int j)
-	{
-		if (PublicFunctions.isValidPosition(i) && PublicFunctions.isValidPosition(j)) 
-		{
-			return board[i][j];
-		}
-		return null;
-	}
 	
 	@Override
 	public String toString()
@@ -127,6 +134,4 @@ public abstract class AbstractBoard <T>
 		builder.append("==============");
 		return builder.toString();
 	}
-
-	
 }
