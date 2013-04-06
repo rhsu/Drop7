@@ -5,7 +5,7 @@ public abstract class AbstractPiece<T>
 	//<editor-fold  defaultstate="collpased" desc="MEMBER VARIABLES">
 	private int horizontal;
 	private int vertical;
-	protected T piece;
+	protected T t;
 	//</editor-fold>
 	
 	//<editor-fold defaultstate="collapsed" desc="ACCESSORS">
@@ -27,11 +27,17 @@ public abstract class AbstractPiece<T>
 	}
 	//</editor-fold>
 	
-	public AbstractPiece(T t,int i, int j)
+	public AbstractPiece(int i, int j)
 	{
 		//piece = (T) new Object(); //commenting out because method is unsafe
 		this.horizontal = i;
 		this.vertical = i;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return t.toString();
 	}
 		
 }
