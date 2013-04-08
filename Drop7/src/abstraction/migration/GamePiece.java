@@ -1,28 +1,32 @@
 package abstraction.migration;
 
 import abstraction.AbstractPiece;
+import abstraction.miscellaneous.PublicFunctions;
 
 public class GamePiece extends AbstractPiece<PieceType>
 {
+	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	private boolean remove;
 	private int value;
+	//</editor-fold>
 	
 	//<editor-fold defaultstate="collapsed" desc="CONSTANTS">
 	/**
 	 *Used to indicate a piece value when it's in the Mystery 1 stage
 	 */
-	public static final int MYSTERY_STAGE_1 = -1;
+	public static final int MYSTERY1_VALUE = -1;
 	/**
 	 * The mystery 2 stage follows the Mystery 1 stage.
 	 *Used to indicate a piece value when it's in the Mystery 2 stage
 	 */
-	public static final int MYSTERY_STAGE_2 = -2;
+	public static final int MYSTERY2_VALUE = -2;
 	/**
 	 *Used to indicate a piece value when it's in the Empty stage
 	 */
-	public static final int EMPTY = 0;
+	public static final int EMPTY_VALUE = 0;
 	//</editor-fold>
 	
+	//<editor-fold defaultstate="collapsed" desc="ACCESSORS">
 	/**
 	 * @return the pieces value
 	 */
@@ -41,46 +45,16 @@ public class GamePiece extends AbstractPiece<PieceType>
 			//makes the piece a mystery piece
 			case 8:
 				this.t = PieceType.MYSTERY1;
-				this.value = MYSTERY_STAGE_1;
-				break;
+				this.value = MYSTERY1_VALUE;
 			//makes the piece an empty piece
-			case EMPTY:
+			case EMPTY_VALUE:
 				this.t = PieceType.EMPTY;
-				this.value = EMPTY;
+				this.value = MYSTERY1_VALUE;
 				break;
 			//makes the piece a set piece
 			default:
 				this.t = PieceType.SET;
 				this.value = value;
-		}
-	}
-
-	/**
-	 * @return the type of the piece
-	 */
-	public PieceType getType()
-	{
-		return t;
-	}
-
-	/**
-	 * @param type the type of the piece to set
-	 */
-	public void setType(PieceType type)
-	{
-		this.t = type;
-                
-		switch(type)
-		{
-			case EMPTY:
-				setValue(EMPTY);
-				break;
-			case MYSTERY1:
-				setValue(MYSTERY_STAGE_1);
-				break;
-			case MYSTERY2:
-				setValue(MYSTERY_STAGE_2);
-				break;
 		}
 	}
 	
@@ -101,10 +75,43 @@ public class GamePiece extends AbstractPiece<PieceType>
 	{
 		this.remove = b;
 	}
+	//</editor-fold>
 	
 	public GamePiece(PieceType t, int i, int j)
 	{
 		super(i, j);
 		this.t = t;
+		
+		switch(t)
+		{
+			case MYSTERY1:
+				value = MYSTERY1_VALUE;
+				break;
+			case MYSTERY2:
+				value = MYSTERY2_VALUE;
+				break;
+			case SET:
+				value = PublicFunctions.getRandomNumber();
+				break;
+			case EMPTY:
+				value = EMPTY_VALUE;
+				break;
+				
+		}
+	}
+	
+	public String toString()
+	{
+		switch(t)
+		{
+			case EMPTY:
+				return " ";
+			case MYSTERY1:
+				return "#";
+			case MYSTERY2:
+				return "@";
+			default:
+				return Integer.toString(this.getValue());
+		}
 	}
 }
