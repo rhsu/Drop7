@@ -100,6 +100,7 @@ public class GamePiece extends AbstractPiece<PieceType>
 		}
 	}
 	
+	@Override
 	public String toString()
 	{
 		switch(t)
