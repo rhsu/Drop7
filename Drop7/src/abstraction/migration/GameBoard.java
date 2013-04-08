@@ -161,4 +161,84 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 			}
 		}
 	}
+
+	/**
+	 * Given a position, this function will create a new piece and update the piece
+	 * If the insert is successful, then a check will be performed to determine if 
+	 * @param position The column number to insert the piece. Do not use with array indexes
+	 * @param value 
+	 * @return True if the insert was successful, else returns false
+	 * @throws IllegalArgumentException If an incorrect position or value is given+
+	 */
+	public boolean insert(int position, int value)
+	{
+		if((position < 1) || (position > 7) || (value > 8))
+		{
+			throw new IllegalArgumentException();
+		}
+		
+		//subtracting one to calibrate the position to work with array indexes
+		position--;
+		
+		for (int index = 6; index >= 0; index--)
+		{
+			GamePiece current = (GamePiece)pieceAt(index, position);
+			if(current.getType() == PieceType.EMPTY)
+			{				
+				current.setValue(value);
+				checkForRemoval(current);				
+				return true;
+			}
+		}
+		return false;
+	}
+        
+	/**
+	 * Given a piece, this functions will check if a piece should be removed
+	 * @param p The piece to perform the operation on
+	 */
+	protected void checkForRemoval(AbstractPiece p)
+	{
+		//TODO: Clean this up. This is very risk prone.
+		ArrayList<AbstractPiece> rows = getAllInRow(p);
+		ArrayList<AbstractPiece> columns = getAllInColumn(p);
+				
+		for(AbstractPiece item : rows)
+		{	
+			GamePiece gamepiece = (GamePiece) item;
+			int value = gamepiece.getValue();
+			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
+			{
+				gamepiece.setRemove(true);
+			}
+		}
+		
+		for(AbstractPiece item: columns)
+		{
+			GamePiece gamepiece = (GamePiece) item;
+			int value = gamepiece.getValue();
+			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
+			{
+				gamepiece.setRemove(true);
+			}
+		}
+		
+		removeMarked();
+	}
+	
+	/**
+	 * Searches the entire board for all removed pieces.
+	 * Removes all the removed pieces on the board.
+	 */
+	protected void removeMarked()
+	{
+		ArrayList<AbstractPiece> marked = getAllRemove();
+		for(AbstractPiece item : marked)
+		{
+			GamePiece gamepiece = (GamePiece)item;
+			gamepiece.setType(PieceType.EMPTY);
+			gamepiece.setRemove(false);
+		}
+	}
+
 }
