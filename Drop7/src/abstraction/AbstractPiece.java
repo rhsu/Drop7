@@ -25,6 +25,18 @@ public abstract class AbstractPiece<T>
 	{
 		return this.vertical;
 	}
+	
+	public T getType()
+	{
+		return t;
+	}
+	
+	public void setType(T t)
+	{
+		this.t = t;
+	}
+	
+	
 	//</editor-fold>
 	
 	public AbstractPiece(int i, int j)
