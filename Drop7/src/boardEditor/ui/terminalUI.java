@@ -5,7 +5,7 @@ package boardEditor.ui;
  */
 public class terminalUI 
 {
-	public static void main(String[] args)
+	public static void ManualEntryMode()
 	{
 		System.out.println("Enter data in by columns or rows");
 		
@@ -16,5 +16,10 @@ public class terminalUI
 		
 		System.out.println("You have entered... blah blah blah");
 		System.out.println("Is this correct?");
+	}
+	
+	public static void main(String[] args)
+	{
+		ManualEntryMode();
 	}
 }
