@@ -4,7 +4,7 @@ import abstraction.AbstractBoard;
 import abstraction.AbstractPiece;
 import java.util.ArrayList;
 
-public class GameBoard extends AbstractBoard<AbstractPiece>
+public class GameBoard extends AbstractBoard<GamePiece>
 {
 	//<editor-fold defaultstate="collapsed" desc="RETRIEVAL FUNCTIONS">
 	/**
@@ -14,14 +14,14 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 	* @param p the parameter piece to perform the calculation on
 	* @return the number of pieces that are in the same row as the parameter piece.
 	*/
-	public int getRowAdjacent(AbstractPiece p)
+	public int getRowAdjacent(GamePiece p)
 	{
 		if((p == null) || (p.getType() == PieceType.EMPTY))
 		{
 			return 0;
 		}
                 
-		AbstractPiece current = p;
+		GamePiece current = p;
 		int numAdjacent = 0;
 		while((getLeftPiece(current) != null) && (getLeftPiece(current).getType() != PieceType.EMPTY))
 		{
@@ -49,14 +49,14 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 	* @param p the parameter piece to perform the calculation on
 	* @return the number of pieces that are in the same column as the parameter piece.
 	*/
-	public int getColumnAdjacent(AbstractPiece p)
+	public int getColumnAdjacent(GamePiece p)
 	{
 		if((p == null) || (p.getType() == PieceType.EMPTY))
 		{
 			return 0;
 		}
             
-		AbstractPiece current = p;
+		GamePiece current = p;
 		int numAdjacent = 0;
 
 		//get the pieces below
@@ -84,17 +84,17 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 	* @param p The piece to perform the method on
 	* @return A list of pieces that are in the same row as the parameter piece
 	*/
-	public ArrayList<AbstractPiece> getAllInRow(AbstractPiece p)
+	public ArrayList<GamePiece> getAllInRow(GamePiece p)
 	{
 		if (p == null)
 		{
 			throw new NullPointerException();
 		}
 		int row = p.getHorizontal();
-		ArrayList<AbstractPiece> list = new ArrayList<>();
+		ArrayList<GamePiece> list = new ArrayList<>();
 		for(int j = 0; j < 7; j++)
 		{
-			AbstractPiece temp = pieceAt(row, j);
+			GamePiece temp = pieceAt(row, j);
 			if((temp != null) && (temp.getType() != PieceType.EMPTY))
 			{
 				list.add(temp);
@@ -107,32 +107,31 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 	* @param p The piece to perform the method on
 	* @return A list of pieces that are in the same column as the parameter piece
 	*/
-	public ArrayList<AbstractPiece> getAllInColumn(AbstractPiece p)
+	public ArrayList<GamePiece> getAllInColumn(GamePiece p)
 	{
 		if (p == null)
 		{
 			throw new NullPointerException();
 		}
 		int column = p.getVertical();
-            ArrayList<AbstractPiece> list = new ArrayList<>();
-            for(int i = 0; i < 7; i++)
-            {
-                //System.out.println(pieceAt(row, i));
-                AbstractPiece temp = pieceAt(i, column);
-                if((temp != null) && (temp.getType() != PieceType.EMPTY))
-                {
-                    list.add(temp);
-                }
-            }
-            return list;
-        }
+		ArrayList<GamePiece> list = new ArrayList<>();
+		for(int i = 0; i < 7; i++)
+		{
+			GamePiece temp = pieceAt(i, column);
+			if((temp != null) && (temp.getType() != PieceType.EMPTY))
+			{
+				list.add(temp);
+			}
+		}
+		return list;
+	}
         
 	/**
 	* @return A list of pieces that are marked as remove
 	*/
-	public ArrayList<AbstractPiece> getAllRemove()
+	public ArrayList<GamePiece> getAllRemove()
 	{
-		ArrayList<AbstractPiece> list = new ArrayList<>();
+		ArrayList<GamePiece> list = new ArrayList<>();
 		for(int i = 0; i < 7; i++)
 		{
 			for(int j = 0; j < 7; j++)
@@ -151,7 +150,7 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 	
 	public GameBoard()
 	{
-		board = new AbstractPiece[7][7];
+		board = new GamePiece[7][7];
 		for(int i = 0; i < 7; i++)
 		{
 			for(int j = 0; j < 7; j++)
@@ -197,15 +196,15 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 	 * Given a piece, this functions will check if a piece should be removed
 	 * @param p The piece to perform the operation on
 	 */
-	protected void checkForRemoval(AbstractPiece p)
+	protected void checkForRemoval(GamePiece p)
 	{
 		//TODO: Clean this up. This is very risk prone.
-		ArrayList<AbstractPiece> rows = getAllInRow(p);
-		ArrayList<AbstractPiece> columns = getAllInColumn(p);
+		ArrayList<GamePiece> rows = getAllInRow(p);
+		ArrayList<GamePiece> columns = getAllInColumn(p);
 				
-		for(AbstractPiece item : rows)
+		for(GamePiece item : rows)
 		{	
-			GamePiece gamepiece = (GamePiece) item;
+			GamePiece gamepiece = item;
 			int value = gamepiece.getValue();
 			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
 			{
@@ -213,9 +212,9 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 			}
 		}
 		
-		for(AbstractPiece item: columns)
+		for(GamePiece item: columns)
 		{
-			GamePiece gamepiece = (GamePiece) item;
+			GamePiece gamepiece = item;
 			int value = gamepiece.getValue();
 			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
 			{
@@ -232,8 +231,8 @@ public class GameBoard extends AbstractBoard<AbstractPiece>
 	 */
 	protected void removeMarked()
 	{
-		ArrayList<AbstractPiece> marked = getAllRemove();
-		for(AbstractPiece item : marked)
+		ArrayList<GamePiece> marked = getAllRemove();
+		for(GamePiece item : marked)
 		{
 			GamePiece gamepiece = (GamePiece)item;
 			gamepiece.setType(PieceType.EMPTY);
