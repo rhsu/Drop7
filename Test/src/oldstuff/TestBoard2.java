@@ -1,4 +1,4 @@
-package test;
+package oldstuff;
 
 public class TestBoard2 
 {

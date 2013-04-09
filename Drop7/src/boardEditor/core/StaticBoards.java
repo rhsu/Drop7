@@ -28,7 +28,6 @@ public class StaticBoards
 	 */
 	public static Board getEmptyBoard()
 	{
-		System.out.println("here???");
 		Board b = new Board();
 		for(int i = 0; i < 7; i++)
 		{

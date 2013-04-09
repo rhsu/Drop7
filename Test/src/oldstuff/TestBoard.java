@@ -1,4 +1,4 @@
-package test;
+package oldstuff;
 
 import gameObjects.Board;
 import gameObjects.Piece;
