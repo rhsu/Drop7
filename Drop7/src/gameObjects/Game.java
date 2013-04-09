@@ -23,12 +23,8 @@ public class Game
 		board = StaticBoards.getEmptyBoard();
 	}
 	
-	/**
-	 *Main Method for testing
-	 * @param args
-	 */
-	public static void main(String[] args)
+	public void menu()
 	{
-		Game g = new Game();
+		System.out.println("Didn't work");
 	}
 }
