@@ -14,26 +14,15 @@ public class GravityTerminal extends TerminalGame
 	@Override
 	public void menu()
 	{
-		int random = PublicFunctions.getRandomNumberPiece();
+		int random;
 
 		while(true)
 		{			
 			builder.setLength(0);
-			
-			//Print out the status
-			if(random == 8)
-			{
-				builder.append("The new piece is mystery piece").append("\n");
-			}
-			else
-			{
-				builder.append("The new piece is ").append(random).append("\n");
-			}
-			builder.append(board.toString());
-			System.out.println(builder);
-			
-                        
-			//Prompt starts here
+			System.out.println(board);
+			System.out.println("What piece do you want to insert?");
+			random = scanner.nextInt();
+			scanner.nextLine(); //advance the scanner because nextInt does not read \n
 			System.out.println("Where do you want to place the piece?");
 			
 			String position = scanner.nextLine();
@@ -41,7 +30,6 @@ public class GravityTerminal extends TerminalGame
 			if(position.equalsIgnoreCase("exit"))
 			{
 				System.out.println("Exiting...");
-				//dump stats here
 				System.exit(0);
 			}
 			else if(position.equalsIgnoreCase("help"))
@@ -53,13 +41,9 @@ public class GravityTerminal extends TerminalGame
 				if(!board.insert(Integer.parseInt(position), random))
 				{
 					System.out.println("You lose");
-					//dump statistics here
 					System.exit(0);
 				}
 				System.out.println("Inserting piece...");
-
-				//Generate random number for next interation
-				random = PublicFunctions.getRandomNumberPiece();
 			}
 			else
 			{
@@ -70,7 +54,7 @@ public class GravityTerminal extends TerminalGame
 	
 	public static void main(String[] args)
 	{
-		Game g = new TerminalGame();
+		Game g = new GravityTerminal();
 		g.menu();
 	}
 }
