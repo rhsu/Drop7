@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class TerminalGame extends Game
 {
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
-	private Scanner scanner;
-	private StringBuilder builder;
+	protected Scanner scanner;
+	protected StringBuilder builder;
 	//</editor-fold>
 	
 	/**
