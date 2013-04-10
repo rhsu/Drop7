@@ -24,6 +24,7 @@ public class TerminalGame extends Game
 	/**
 	 * The main UI of the TerminalGame class
 	 */
+	@Override
 	public void menu()
 	{
 		int random = PublicFunctions.getRandomNumberPiece();
@@ -82,7 +83,7 @@ public class TerminalGame extends Game
 	
 	public static void main(String[] args)
 	{
-		TerminalGame g = new TerminalGame();
+		Game g = new TerminalGame();
 		g.menu();
 	}
 }

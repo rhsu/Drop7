@@ -1,12 +1,11 @@
 package gameObjects;
 
-import gameObjects.Board;
 import boardEditor.core.StaticBoards;
 
 /**
  * The class to play to play the game.
  */
-public class Game 
+public abstract class Game 
 {
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	/**
@@ -25,6 +24,6 @@ public class Game
 	
 	public void menu()
 	{
-		System.out.println("Didn't work");
+		
 	}
 }
