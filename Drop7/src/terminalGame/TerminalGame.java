@@ -82,7 +82,7 @@ public class TerminalGame extends Game
 	
 	public static void main(String[] args)
 	{
-		TerminalGame g = new TerminalGame();
+		Game g = new TerminalGame();
 		g.menu();
 	}
 }
