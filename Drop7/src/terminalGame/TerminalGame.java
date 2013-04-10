@@ -24,6 +24,7 @@ public class TerminalGame extends Game
 	/**
 	 * The main UI of the TerminalGame class
 	 */
+	@Override
 	public void menu()
 	{
 		int random = PublicFunctions.getRandomNumberPiece();
