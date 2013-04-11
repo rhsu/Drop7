@@ -9,6 +9,7 @@ public class GravityTerminal extends TerminalGame
 	public GravityTerminal()
 	{
 		super();
+		board.pieceAt(5, 2).setValue(5);
 	}
 	
 	@Override
