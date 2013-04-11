@@ -1,6 +1,7 @@
 package gravityTest;
 
 import gameObjects.Piece;
+import java.util.ArrayList;
 import terminalGame.TerminalGame;
 import utilities.PublicFunctions;
 
@@ -10,28 +11,26 @@ public class GravityTerminal extends TerminalGame
 	public GravityTerminal()
 	{
 		super();
-		board.pieceAt(6, 2).setValue(5);
+		board.pieceAt(5, 2).setValue(5);
 		testPiece = board.pieceAt(6, 2);
 	}
 	
 	public void GravityCheck()
 	{
 		System.out.println(board);
-		/*try
+		
+		ArrayList<Piece> column = board.getAllInColumn(testPiece);
+		
+		StringBuilder strbuilder = new StringBuilder();
+		for(Piece p : column)
 		{
-			Piece bottomPiece = board.getDownPiece(testPiece);
-			if(bottomPiece.getType() == Piece.Type.EMPTY)
+			Piece bottom = board.getDownPiece(p);
+			if(bottom != null)
 			{
-				System.out.println("here");
+				System.out.println("Move the piece down");
 			}
 		}
-		catch(Exception e)
-		{
-			System.out.println("Can't access the piece because it doesn't exist");
-		}*/
-		
-		Piece bottomPiece = board.getDownPiece(testPiece);
-		if(bottomPiece == null) System.out.println("it works!");
+		System.out.println(strbuilder);
 	}
 	
 	@Override

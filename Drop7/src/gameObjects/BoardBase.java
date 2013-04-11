@@ -211,18 +211,18 @@ public class BoardBase
 			throw new NullPointerException();
 		}
 		int column = p.getVertical();
-            ArrayList<Piece> list = new ArrayList<>();
-            for(int i = 0; i < 7; i++)
-            {
-                //System.out.println(pieceAt(row, i));
-                Piece temp = pieceAt(i, column);
-                if((temp != null) && (temp.getType() != Piece.Type.EMPTY))
-                {
-                    list.add(temp);
-                }
-            }
-            return list;
-        }
+		ArrayList<Piece> list = new ArrayList<>();
+		for(int i = 0; i < 7; i++)
+		{
+			//System.out.println(pieceAt(row, i));
+			Piece temp = pieceAt(i, column);
+			if((temp != null) && (temp.getType() != Piece.Type.EMPTY))
+			{
+				list.add(temp);
+			}
+		}
+		return list;
+	}
         
 	/**
 	* @return A list of pieces that are marked as remove
