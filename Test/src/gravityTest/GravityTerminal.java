@@ -1,5 +1,6 @@
 package gravityTest;
 
+import gameObjects.BoardBase;
 import gameObjects.Piece;
 import java.util.ArrayList;
 import terminalGame.TerminalGame;
@@ -21,16 +22,15 @@ public class GravityTerminal extends TerminalGame
 		
 		ArrayList<Piece> column = board.getAllInColumn(testPiece);
 		
-		StringBuilder strbuilder = new StringBuilder();
 		for(Piece p : column)
 		{
 			Piece bottom = board.getDownPiece(p);
 			if(bottom != null)
 			{
-				System.out.println("Move the piece down");
+				board.move(p, BoardBase.Direction.DOWN);
 			}
 		}
-		System.out.println(strbuilder);
+
 	}
 	
 	@Override
