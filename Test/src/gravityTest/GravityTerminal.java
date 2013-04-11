@@ -1,15 +1,18 @@
 package gravityTest;
 
 import gameObjects.Game;
+import gameObjects.Piece;
 import terminalGame.TerminalGame;
 import utilities.PublicFunctions;
 
 public class GravityTerminal extends TerminalGame
 {
+	Piece testPiece;
 	public GravityTerminal()
 	{
 		super();
 		board.pieceAt(5, 2).setValue(5);
+		testPiece = board.pieceAt(5, 2);
 	}
 	
 	@Override
