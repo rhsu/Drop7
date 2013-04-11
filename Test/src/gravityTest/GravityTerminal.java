@@ -1,6 +1,5 @@
 package gravityTest;
 
-import gameObjects.Game;
 import gameObjects.Piece;
 import terminalGame.TerminalGame;
 import utilities.PublicFunctions;
@@ -11,8 +10,25 @@ public class GravityTerminal extends TerminalGame
 	public GravityTerminal()
 	{
 		super();
-		board.pieceAt(5, 2).setValue(5);
-		testPiece = board.pieceAt(5, 2);
+		board.pieceAt(6, 2).setValue(5);
+		testPiece = board.pieceAt(6, 2);
+	}
+	
+	public void GravityCheck()
+	{
+		System.out.println(board);
+		try
+		{
+			Piece bottomPiece = board.getDownPiece(testPiece);
+			if(bottomPiece.getType() == Piece.Type.EMPTY)
+			{
+				System.out.println("here");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Can't access the piece because it doesn't exist");
+		}
 	}
 	
 	@Override
@@ -58,7 +74,8 @@ public class GravityTerminal extends TerminalGame
 	
 	public static void main(String[] args)
 	{
-		Game g = new GravityTerminal();
-		g.menu();
+		GravityTerminal g = new GravityTerminal();
+		g.GravityCheck();
+		//g.menu();
 	}
 }
