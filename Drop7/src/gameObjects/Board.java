@@ -1,6 +1,8 @@
 package gameObjects;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *A super class of Board Base, which contains methods having to do with the game.
@@ -89,6 +91,18 @@ public class Board extends BoardBase
 			item.setType(Piece.Type.EMPTY);
 			item.setRemove(false);
 		}
+	}
+	
+	public boolean move(Piece p, Direction direction)
+	{
+		int value = p.getValue();
+		Piece bottom = getDownPiece(p);
+		if(bottom != null)
+		{
+			p.setType(Piece.Type.EMPTY);
+			bottom.setValue(value);	
+		}
+		return false;
 	}
 	
 	/**
