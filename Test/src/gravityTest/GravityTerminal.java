@@ -17,7 +17,7 @@ public class GravityTerminal extends TerminalGame
 	public void GravityCheck()
 	{
 		System.out.println(board);
-		try
+		/*try
 		{
 			Piece bottomPiece = board.getDownPiece(testPiece);
 			if(bottomPiece.getType() == Piece.Type.EMPTY)
@@ -28,7 +28,10 @@ public class GravityTerminal extends TerminalGame
 		catch(Exception e)
 		{
 			System.out.println("Can't access the piece because it doesn't exist");
-		}
+		}*/
+		
+		Piece bottomPiece = board.getDownPiece(testPiece);
+		if(bottomPiece == null) System.out.println("it works!");
 	}
 	
 	@Override
