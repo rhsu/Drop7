@@ -24,7 +24,7 @@ public class BoardBase
 	 * @return The piece to the left of the given index
 	 */
 	public Piece getLeftPiece(int i, int j)
-	{		
+	{	
 		return pieceAt(i, j - 1);
 	}
 	
@@ -271,7 +271,7 @@ public class BoardBase
 	 */
 	public Piece pieceAt(int i, int j)
 	{
-		if (PublicFunctions.isValidPosition(i) && PublicFunctions.isValidPosition(j)) 
+		if(PublicFunctions.isValidIndex(i) && PublicFunctions.isValidIndex(j))
 		{
 			return board[i][j];
 		}

@@ -54,6 +54,15 @@ public class PublicFunctions
 		return false;
 	}
 	
+	public static boolean isValidIndex(int i)
+	{
+		if((i < 0) || (i > 6))
+		{
+			return false;
+		}
+		return true;
+	}
+	
 	/**
 	* Checks if the user inputted position is valid
 	* @return True if the position of valid
@@ -62,35 +71,7 @@ public class PublicFunctions
 	{
 		return ((position >= 0) && (position < 7));
 	}
-	
-	/**
-	* Creates 100 random pieces and plots the frequency of each piece.
-	*/
-	@Deprecated
-	public static void testRandom()
-	{
-		int[] stats = new int[8];
-		for (int i = 0 ; i < stats.length; i++) 
-		{
-			stats[i] = 0;
-		}
-
-		System.out.println("Test random: Creating 100 Pieces");
-		for (int i = 0; i < 100; i++)
-		{
-			int r = PublicFunctions.getRandomNumber();
-			stats[r]++;
-		}
 		
-		//dump stats
-		System.out.println("The values of the pieces and they're frequencies");
-		
-		for (int i = 0; i < stats.length; i++)
-		{
-			System.out.println(i + " : " + stats[i]);	
-		}	
-	}
-	
 	/**
 	* Creates a matrix to make envisioning indices easier
 	*/
@@ -129,10 +110,8 @@ public class PublicFunctions
 		}
 	}
 	
-	
 	public static void main(String[] args)
 	{
-		//System.out.println(getRandomNumber());
-		testMatrix();
+		
 	}
 }
