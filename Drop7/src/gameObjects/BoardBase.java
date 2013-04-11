@@ -8,6 +8,14 @@ import java.util.ArrayList;
  */
 public class BoardBase 
 {
+	public enum Direction
+	{
+		UP,
+		DOWN,
+		LEFT,
+		RIGHT
+	}
+	
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	/**
 	 *The 2D array representing the actual board
@@ -277,7 +285,7 @@ public class BoardBase
 		}
 		return null;
 	}
-		
+	
 	/**
 	 *
 	 * @return a string representing the 
