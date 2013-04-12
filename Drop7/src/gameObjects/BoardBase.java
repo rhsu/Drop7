@@ -8,6 +8,14 @@ import java.util.ArrayList;
  */
 public class BoardBase 
 {
+	public enum Direction
+	{
+		UP,
+		DOWN,
+		LEFT,
+		RIGHT
+	}
+	
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	/**
 	 *The 2D array representing the actual board
@@ -24,7 +32,7 @@ public class BoardBase
 	 * @return The piece to the left of the given index
 	 */
 	public Piece getLeftPiece(int i, int j)
-	{		
+	{	
 		return pieceAt(i, j - 1);
 	}
 	
@@ -201,6 +209,9 @@ public class BoardBase
 	}
         
 	/**
+	* Loops through every single piece in the same column as the given piece.
+	* And constructs an ArrayList adding the given piece into the column
+	* The construction of the ArrayList begins at the bottom most piece and goes up
 	* @param p The piece to perform the method on
 	* @return A list of pieces that are in the same column as the parameter piece
 	*/
@@ -211,18 +222,17 @@ public class BoardBase
 			throw new NullPointerException();
 		}
 		int column = p.getVertical();
-            ArrayList<Piece> list = new ArrayList<>();
-            for(int i = 0; i < 7; i++)
-            {
-                //System.out.println(pieceAt(row, i));
-                Piece temp = pieceAt(i, column);
-                if((temp != null) && (temp.getType() != Piece.Type.EMPTY))
-                {
-                    list.add(temp);
-                }
-            }
-            return list;
-        }
+		ArrayList<Piece> list = new ArrayList<>();
+		for(int i = 6; i >= 0; i--)
+		{
+			Piece temp = pieceAt(i, column);
+			if((temp != null) && (temp.getType() != Piece.Type.EMPTY))
+			{
+				list.add(temp);
+			}
+		}
+        return list;
+	}
         
 	/**
 	* @return A list of pieces that are marked as remove
@@ -271,13 +281,13 @@ public class BoardBase
 	 */
 	public Piece pieceAt(int i, int j)
 	{
-		if (PublicFunctions.isValidPosition(i) && PublicFunctions.isValidPosition(j)) 
+		if(PublicFunctions.isValidIndex(i) && PublicFunctions.isValidIndex(j))
 		{
 			return board[i][j];
 		}
 		return null;
 	}
-		
+	
 	/**
 	 *
 	 * @return a string representing the 

@@ -1,12 +1,11 @@
 package gameObjects;
 
-import gameObjects.Board;
 import boardEditor.core.StaticBoards;
 
 /**
  * The class to play to play the game.
  */
-public class Game 
+public abstract class Game 
 {
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
 	/**
@@ -23,12 +22,8 @@ public class Game
 		board = StaticBoards.getEmptyBoard();
 	}
 	
-	/**
-	 *Main Method for testing
-	 * @param args
-	 */
-	public static void main(String[] args)
+	public void menu()
 	{
-		Game g = new Game();
+		
 	}
 }

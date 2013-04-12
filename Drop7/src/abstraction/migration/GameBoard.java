@@ -5,6 +5,7 @@ import abstraction.AbstractPiece;
 import java.util.ArrayList;
 
 public class GameBoard extends AbstractBoard<GamePiece>
+
 {
 	//<editor-fold defaultstate="collapsed" desc="RETRIEVAL FUNCTIONS">
 	/**
@@ -57,6 +58,7 @@ public class GameBoard extends AbstractBoard<GamePiece>
 		}
             
 		GamePiece current = p;
+
 		int numAdjacent = 0;
 
 		//get the pieces below
@@ -91,16 +93,18 @@ public class GameBoard extends AbstractBoard<GamePiece>
 			throw new NullPointerException();
 		}
 		int row = p.getHorizontal();
-		ArrayList<GamePiece> list = new ArrayList<>();
+
+		ArrayList<GamePiece> arrayList = new ArrayList<>();
 		for(int j = 0; j < 7; j++)
 		{
 			GamePiece temp = pieceAt(row, j);
+
 			if((temp != null) && (temp.getType() != PieceType.EMPTY))
 			{
-				list.add(temp);
+				arrayList.add(temp);
 			}
 		}
-		return list;
+		return arrayList;
 	}
         
 	/**
@@ -114,24 +118,27 @@ public class GameBoard extends AbstractBoard<GamePiece>
 			throw new NullPointerException();
 		}
 		int column = p.getVertical();
-		ArrayList<GamePiece> list = new ArrayList<>();
+		
+		ArrayList<GamePiece> arrayList = new ArrayList<>();
+		
 		for(int i = 0; i < 7; i++)
 		{
 			GamePiece temp = pieceAt(i, column);
 			if((temp != null) && (temp.getType() != PieceType.EMPTY))
 			{
-				list.add(temp);
+				arrayList.add(temp);
 			}
 		}
-		return list;
+		return arrayList;
 	}
-        
+	
 	/**
 	* @return A list of pieces that are marked as remove
 	*/
 	public ArrayList<GamePiece> getAllRemove()
 	{
 		ArrayList<GamePiece> list = new ArrayList<>();
+
 		for(int i = 0; i < 7; i++)
 		{
 			for(int j = 0; j < 7; j++)
@@ -205,23 +212,13 @@ public class GameBoard extends AbstractBoard<GamePiece>
 		for(GamePiece item : rows)
 		{	
 			GamePiece gamepiece = item;
+
 			int value = gamepiece.getValue();
 			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
 			{
 				gamepiece.setRemove(true);
 			}
 		}
-		
-		for(GamePiece item: columns)
-		{
-			GamePiece gamepiece = item;
-			int value = gamepiece.getValue();
-			if((value == getColumnAdjacent(item)) || (value == getRowAdjacent(item)))
-			{
-				gamepiece.setRemove(true);
-			}
-		}
-		
 		removeMarked();
 	}
 	
@@ -234,7 +231,7 @@ public class GameBoard extends AbstractBoard<GamePiece>
 		ArrayList<GamePiece> marked = getAllRemove();
 		for(GamePiece item : marked)
 		{
-			GamePiece gamepiece = (GamePiece)item;
+			GamePiece gamepiece = item;
 			gamepiece.setType(PieceType.EMPTY);
 			gamepiece.setRemove(false);
 		}
