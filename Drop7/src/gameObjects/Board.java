@@ -95,10 +95,15 @@ public class Board extends BoardBase
 	{
 		int value = p.getValue();
 		Piece bottom = getDownPiece(p);
-		if((bottom != null) && (bottom.getType() == Piece.Type.EMPTY))
+		while((bottom != null) && (bottom.getType() == Piece.Type.EMPTY))
 		{
+			/*if(value == 2) 
+			{
+				System.out.println("here");
+			}*/
 			p.setType(Piece.Type.EMPTY);
 			bottom.setValue(value);	
+			//System.out.println(bottom);
 		}
 		return false;
 	}

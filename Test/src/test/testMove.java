@@ -5,6 +5,7 @@ import gameObjects.*;
 
 public class testMove 
 {
+	@SuppressWarnings("empty-statement")
 	public static void main(String... args)
 	{
 		Board b = StaticBoards.getEmptyBoard();
@@ -23,10 +24,15 @@ public class testMove
 		
 		for(Piece p : b.getAllInColumn(b.pieceAt(4, 2)))
 		{
-			if(!b.move(p, BoardBase.Direction.DOWN));
+			/*if(p.getValue() == 2)
+			{
+				System.out.println("Tracing piece " + p);
+				System.out.println(p.getType());
+				System.out.println(b.getDownPiece(p));
+			}*/
+			b.move(p, BoardBase.Direction.DOWN);
 		}
 		
 		System.out.println(b);
-				
 	}
 }
