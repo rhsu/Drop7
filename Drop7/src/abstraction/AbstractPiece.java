@@ -43,7 +43,7 @@ public abstract class AbstractPiece<T>
 	{
 		//piece = (T) new Object(); //commenting out because method is unsafe
 		this.horizontal = i;
-		this.vertical = i;
+		this.vertical = j;
 	}
 	
 	@Override
