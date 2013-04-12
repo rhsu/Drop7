@@ -117,10 +117,8 @@ public class GameBoard extends AbstractBoard<GamePiece>
 			throw new NullPointerException();
 		}
 		
-		//get vertical function is wrong possibly
 		int column = p.getVertical();
 		
-		System.out.println("column is " + column);
 		ArrayList<GamePiece> arrayList = new ArrayList<>();
 			
 		for(int i = 0; i < 7; i++)
@@ -129,12 +127,6 @@ public class GameBoard extends AbstractBoard<GamePiece>
 			if((temp != null) && (temp.getType() != PieceType.EMPTY))
 			{
 				arrayList.add(temp);
-			}
-			else if(temp == null) System.out.println("Something happened");
-			else
-			{
-				if(temp.getType() == PieceType.EMPTY) System.out.println("EMPTY PIECE");
-				else System.out.println(temp);
 			}
 		}
 		return arrayList;
