@@ -209,6 +209,9 @@ public class BoardBase
 	}
         
 	/**
+	* Loops through every single piece in the same column as the given piece.
+	* And constructs an ArrayList adding the given piece into the column
+	* The construction of the ArrayList begins at the bottom most piece and goes up
 	* @param p The piece to perform the method on
 	* @return A list of pieces that are in the same column as the parameter piece
 	*/
@@ -220,7 +223,7 @@ public class BoardBase
 		}
 		int column = p.getVertical();
 		ArrayList<Piece> list = new ArrayList<>();
-		for(int i = 0; i < 7; i++)
+		for(int i = 6; i >= 0; i--)
 		{
 			Piece temp = pieceAt(i, column);
 			if((temp != null) && (temp.getType() != Piece.Type.EMPTY))

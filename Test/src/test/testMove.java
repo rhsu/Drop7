@@ -29,6 +29,8 @@ public class testMove
 		
 		System.out.println(b);
 		
+		System.out.println(b.pieceAt(4,2));
+		
 		System.out.println(b.getAllInColumn(b.pieceAt(4,2)));
 		
 		for(Piece p : b.getAllInColumn(b.pieceAt(4, 2)))
