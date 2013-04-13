@@ -1,51 +1,35 @@
 package terminalGame;
 
+import boardEditor.core.StaticBoards;
 import gameObjects.Game;
 import utilities.PublicFunctions;
-import java.util.Scanner;
 
-public class TerminalGame extends Game
+/**
+ *
+ * @author robert
+ */
+public class SimpleTerminalGame extends TerminalGame
 {
-	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
-	protected Scanner scanner;
-	protected StringBuilder builder;
-	//</editor-fold>
-	
-	/**
-	 * A terminal GUI of the Drop7 game
-	 */
-	public TerminalGame()
+	SimpleTerminalGame()
 	{
 		super();
-		builder = new StringBuilder();
-		scanner = new Scanner(System.in);
+		board = StaticBoards.getEmptyBoard();
 	}
 	
-	/**
-	 * The main UI of the TerminalGame class
-	 */
 	@Override
 	public void menu()
 	{
-		int random = PublicFunctions.getRandomNumberPiece();
-
+		int random = PublicFunctions.getRandomNumber();
+		
 		while(true)
 		{			
 			builder.setLength(0);
 			
 			//Print out the status
-			if(random == 8)
-			{
-				builder.append("The new piece is mystery piece").append("\n");
-			}
-			else
-			{
-				builder.append("The new piece is ").append(random).append("\n");
-			}
+			builder.append("The new piece is ").append(random).append("\n");
 			builder.append(board.toString());
 			System.out.println(builder);
 			
-                        
 			//Prompt starts here
 			System.out.println("Where do you want to place the piece?");
 			
@@ -72,7 +56,7 @@ public class TerminalGame extends Game
 				System.out.println("Inserting piece...");
 
 				//Generate random number for next interation
-				random = PublicFunctions.getRandomNumberPiece();
+				random = PublicFunctions.getRandomNumber();
 			}
 			else
 			{
@@ -80,10 +64,10 @@ public class TerminalGame extends Game
 			}
 		}
 	}
-	
+
 	public static void main(String[] args)
 	{
-		Game g = new TerminalGame();
+		Game g = new SimpleTerminalGame();
 		g.menu();
 	}
 }
