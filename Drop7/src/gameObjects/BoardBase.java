@@ -223,6 +223,7 @@ public class BoardBase
 		}
 		int column = p.getVertical();
 		ArrayList<Piece> list = new ArrayList<>();
+		
 		for(int i = 6; i >= 0; i--)
 		{
 			Piece temp = pieceAt(i, column);
