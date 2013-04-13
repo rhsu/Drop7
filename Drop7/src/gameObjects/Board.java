@@ -91,6 +91,23 @@ public class Board extends BoardBase
 		}
 	}
 	
+	public boolean move(Piece p, Direction direction)
+	{
+		int value = p.getValue();
+		Piece bottom = getDownPiece(p);
+		while((bottom != null) && (bottom.getType() == Piece.Type.EMPTY))
+		{
+			/*if(value == 2) 
+			{
+				System.out.println("here");
+			}*/
+			p.setType(Piece.Type.EMPTY);
+			bottom.setValue(value);	
+			//System.out.println(bottom);
+		}
+		return false;
+	}
+	
 	/**
 	 *
 	 * @param args
