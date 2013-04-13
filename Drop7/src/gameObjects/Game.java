@@ -19,7 +19,7 @@ public abstract class Game
 	 */
 	public Game()
 	{
-		board = StaticBoards.getEmptyBoard();
+		board = new Board();
 	}
 	
 	public void menu()

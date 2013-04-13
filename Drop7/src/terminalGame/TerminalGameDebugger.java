@@ -1,5 +1,6 @@
 package terminalGame;
 
+import boardEditor.core.StaticBoards;
 import gameObjects.BoardBase;
 import gameObjects.Piece;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ public class TerminalGameDebugger extends TerminalGame
 	public TerminalGameDebugger()
 	{
 		super();
+		board = StaticBoards.getEmptyBoard();
 		board.pieceAt(5, 2).setValue(5);
 		testPiece = board.pieceAt(6, 2);
 	}
