@@ -3,13 +3,12 @@ package terminalGame;
 import gameObjects.BoardBase;
 import gameObjects.Piece;
 import java.util.ArrayList;
-import terminalGame.TerminalGame;
 import utilities.PublicFunctions;
 
-public class GravityTerminal extends TerminalGame
+public class TerminalGameDebugger extends TerminalGame
 {
 	Piece testPiece;
-	public GravityTerminal()
+	public TerminalGameDebugger()
 	{
 		super();
 		board.pieceAt(5, 2).setValue(5);
@@ -76,7 +75,7 @@ public class GravityTerminal extends TerminalGame
 	
 	public static void main(String[] args)
 	{
-		GravityTerminal g = new GravityTerminal();
+		TerminalGameDebugger g = new TerminalGameDebugger();
 		g.GravityCheck();
 		//g.menu();
 	}
