@@ -1,4 +1,4 @@
-package gravityTest;
+package terminalGame;
 
 import gameObjects.BoardBase;
 import gameObjects.Piece;
