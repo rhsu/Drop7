@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package terminalGame;
 
 import gameObjects.Game;
@@ -12,12 +8,12 @@ public class TerminalGameMain
 	public static void main(String[] args)
 	{
 		Game g;
+		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Which terminal Game do you want to use?");
 		System.out.println("Press 1: for TerminalGame");
 		System.out.println("Press 2: for GameDebugger");
 		System.out.println("Press 3: for Simple Terminal Game");
-		
-		Scanner sc = new Scanner(System.in);
 		
 		String i = sc.nextLine();
 		switch(i)

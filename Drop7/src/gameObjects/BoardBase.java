@@ -309,15 +309,4 @@ public class BoardBase
 		builder.append("==============");
 		return builder.toString();
 	}
-	
-	/**
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args)
-	{
-		Board b = new Board();
-		System.out.println(b);
-		System.out.println(b.pieceAt(6, 6));
-	}
 }

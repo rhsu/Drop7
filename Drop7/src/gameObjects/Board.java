@@ -107,13 +107,4 @@ public class Board extends BoardBase
 		}
 		return false;
 	}
-	
-	/**
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args)
-	{		
-
-	}
 }

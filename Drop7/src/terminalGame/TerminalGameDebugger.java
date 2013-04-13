@@ -74,11 +74,4 @@ public class TerminalGameDebugger extends TerminalGame
 			}
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		TerminalGameDebugger g = new TerminalGameDebugger();
-		g.GravityCheck();
-		//g.menu();
-	}
 }

@@ -109,9 +109,4 @@ public class PublicFunctions
 			System.out.print(matrix[0][j] + " ");
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		
-	}
 }

@@ -64,10 +64,4 @@ public class SimpleTerminalGame extends TerminalGame
 			}
 		}
 	}
-
-	public static void main(String[] args)
-	{
-		Game g = new SimpleTerminalGame();
-		g.menu();
-	}
 }
