@@ -1,13 +1,19 @@
 package terminalGame;
 
-import gameObjects.Game;
+import gameObjects.GameGUI;
 import java.util.Scanner;
 
 public class TerminalGameMain 
 {
+	/**
+	 * The main routine. Prompts the user between the three possible guis
+	 * If the user enters an incorrect input, then the default of TerminalGame
+	 * will be instatiated
+	 * @param args not used
+	 */
 	public static void main(String[] args)
 	{
-		Game g;
+		GameGUI g;
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Which terminal Game do you want to use?");

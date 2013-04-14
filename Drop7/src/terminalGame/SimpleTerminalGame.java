@@ -1,21 +1,27 @@
 package terminalGame;
 
 import boardEditor.core.StaticBoards;
-import gameObjects.Game;
 import utilities.PublicFunctions;
 
 /**
- *
- * @author robert
+ *The terminal game for simple gameplay.
+ * Mystery pieces are not generated
+ * The board that is created is set to be an empty board
  */
 public class SimpleTerminalGame extends TerminalGame
 {
+	/**
+	 * Constructor. Creates an empty board
+	 */
 	SimpleTerminalGame()
 	{
 		super();
 		board = StaticBoards.getEmptyBoard();
 	}
 	
+	/**
+	 * The menu for the simple terminal game
+	 */
 	@Override
 	public void menu()
 	{
