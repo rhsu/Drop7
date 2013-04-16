@@ -112,6 +112,6 @@ public class PublicFunctions
 	
 	public static void main(String[] args)
 	{
-		
+		testMatrix();
 	}
 }

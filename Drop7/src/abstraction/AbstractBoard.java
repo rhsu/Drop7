@@ -2,16 +2,24 @@ package abstraction;
 
 import abstraction.miscellaneous.PublicFunctions;
 
+/**
+ * The Abstract Board class is a custom made data-structure, which allows easy
+ * access of "pieces" by retrieval functions.
+ * @param <T> Generic Type. The type must extend Abstract Piece
+ */
 public abstract class AbstractBoard <T extends AbstractPiece>
 {
+	/**
+	 * the board object to allocate in the constructor
+	 */
 	protected T[][] board;
 		
 	//<editor-fold defaultstate="collapsed" desc="RETRIEVAL FUNCTIONS">
         
 	/**
 	 * 
-	 * @param i index
-	 * @param j index
+	 * @param i horizontal index
+	 * @param j vertical index
 	 * @return The piece to the left of the given index
 	 */
 	public T getLeftPiece(int i, int j)
@@ -31,8 +39,8 @@ public abstract class AbstractBoard <T extends AbstractPiece>
 	
 	/**
 	 * 
-	 * @param i index
-	 * @param j index
+	 * @param i horizontal index
+	 * @param j vertical index
 	 * @return The piece to the right of the given index
 	 */
 	public T getRightPiece(int i, int j)
@@ -52,8 +60,8 @@ public abstract class AbstractBoard <T extends AbstractPiece>
 	
 	/**
 	 * 
-	 * @param i index
-	 * @param j index
+	 * @param i horizontal index
+	 * @param j vertical index
 	 * @return The piece above the given index
 	 */
 	public T getUpPiece(int i, int j)
@@ -73,8 +81,8 @@ public abstract class AbstractBoard <T extends AbstractPiece>
 	
 	/**
 	 * 
-	 * @param i index
-	 * @param j index
+	 * @param i horizontal index
+	 * @param j vertical index
 	 * @return The piece below the given index
 	 */
 	public T getDownPiece(int i, int j)
@@ -92,9 +100,9 @@ public abstract class AbstractBoard <T extends AbstractPiece>
 	}
 	
 	/**
-	 * Retrieves a Piece from the board with the given indexes
-	 * @param i index
-	 * @param j index
+	 * Retrieves a Piece from the board with the given indices
+	 * @param i horizontal index
+	 * @param j vertical index
 	 * @return The piece from the board. Null if no piece exists
 	 */
 	public T pieceAt(int i, int j)
@@ -110,13 +118,27 @@ public abstract class AbstractBoard <T extends AbstractPiece>
 	//</editor-fold>
 	
 	/**
-	 * The constructor must contain a way 
+	 * To utilize this constructor, allocate a 2-dimensional array of objects that
+	 * extends abstract piece. 
+	 * 
+	 * Example usage:
+	 * 
+	 * for(int i = 0; i < 7; i++)
+	 * {
+	 *		for(int j = 0; j < 7; j++)
+	 *		{
+	 *			board = new GamePiece(PieceType.EMPTY, i, j);
+	 *		}
+	 * }
 	 */
 	public AbstractBoard()
 	{
 		//TODO: Research how to do generic array allocation seems complicated
 	}
 	
+	/**
+	 * @return a string representation of the AbstractBoard object
+	 */
 	@Override
 	public String toString()
 	{
