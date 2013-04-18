@@ -3,6 +3,10 @@ package abstraction.migration;
 import abstraction.AbstractBoard;
 import java.util.ArrayList;
 
+/**
+ *An implementation of AbstractBoard that takes in GamePiece as the
+ * genetic type.
+ */
 public class GameBoard extends AbstractBoard<GamePiece>
 
 {
@@ -155,6 +159,9 @@ public class GameBoard extends AbstractBoard<GamePiece>
         
 	//</editor-fold>
 	
+	/**
+	 *Constructor.
+	 */
 	public GameBoard()
 	{
 		board = new GamePiece[7][7];

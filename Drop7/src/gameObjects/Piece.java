@@ -185,7 +185,7 @@ public class Piece
 	
 	/**
 	 *
-	 * @return
+	 * @return a string representation of the piece
 	 */
 	@Override
 	public String toString()

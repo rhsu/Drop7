@@ -36,6 +36,7 @@ public class PublicFunctions
 	/**
 	* Checks if the user inputted position is valid
 	* Usage: In the prompt since the user input is of type string
+	* @param position The position to check.
 	* @return True if the position of valid
 	*/
 	public static boolean isValidPosition(String position)
@@ -56,6 +57,7 @@ public class PublicFunctions
 	
 	/**
 	* Checks if the user inputted position is valid
+	* @param position The position to check
 	* @return True if the position of valid
 	*/
 	public static boolean isValidPosition(int position)

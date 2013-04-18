@@ -120,16 +120,19 @@ public abstract class AbstractBoard <T extends AbstractPiece>
 	/**
 	 * To utilize this constructor, allocate a 2-dimensional array of objects that
 	 * extends abstract piece. 
-	 * 
+	 * <br/>
 	 * Example usage:
-	 * 
+	 * <pre>
+	 * <code>
 	 * for(int i = 0; i < 7; i++)
 	 * {
-	 *		for(int j = 0; j < 7; j++)
+	 *		for(int j = 0; j < 7; j++)<br/>
 	 *		{
-	 *			board = new GamePiece(PieceType.EMPTY, i, j);
+	 *			board = new StringPiece("ThisIsAString", i, j);<br/>
 	 *		}
 	 * }
+	 * </code>
+	 * </pre>
 	 */
 	public AbstractBoard()
 	{

@@ -74,6 +74,9 @@ public abstract class AbstractPiece<T>
 		this.vertical = j;
 	}
 	
+	/**
+	 * @return a string representation of the generic type
+	 */
 	@Override
 	public String toString()
 	{
