@@ -1,28 +1,26 @@
-package terminalGame;
+package abstractionTest;
 
-import boardEditor.core.StaticBoards;
-import utilities.PublicFunctions;
+import abstraction.migration.GameBoard;
+import abstraction.miscellaneous.PublicFunctions;
+import abstraction.temp.StaticAbstractBoards;
+import java.util.Scanner;
 
 /**
- *The terminal game for simple game play.
- * Mystery pieces are not generated
- * The board that is created is set to be an empty board
+ *
  */
-public class SimpleTerminalGame extends TerminalGame
+public class AbstractTerminal
 {
-	/**
-	 * Constructor. Creates an empty board
-	 */
-	SimpleTerminalGame()
+	Scanner scanner;
+	StringBuilder builder;
+	GameBoard board;
+	
+	public AbstractTerminal()
 	{
-		super();
-		board = StaticBoards.getEmptyBoard();
+		board = StaticAbstractBoards.getEmptyBoard();
+		scanner = new Scanner(System.in);
+		builder = new StringBuilder();
 	}
 	
-	/**
-	 * The menu for the simple terminal game
-	 */
-	@Override
 	public void menu()
 	{
 		int random = PublicFunctions.getRandomNumber();
@@ -69,5 +67,11 @@ public class SimpleTerminalGame extends TerminalGame
 				System.out.println("Invalid Entry");
 			}
 		}
+	}
+
+	public static void main(String... args)
+	{
+		AbstractTerminal t = new AbstractTerminal();
+		t.menu();
 	}
 }
