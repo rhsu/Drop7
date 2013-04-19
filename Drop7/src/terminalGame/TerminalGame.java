@@ -1,18 +1,24 @@
 package terminalGame;
 
-import gameObjects.Game;
+import gameObjects.GameGUI;
 import utilities.PublicFunctions;
 import java.util.Scanner;
 
-public class TerminalGame extends Game
+public class TerminalGame extends GameGUI
 {
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
+	/**
+	 * scanner object for reading in user's input
+	 */
 	protected Scanner scanner;
+	/**
+	 * builder object for printing output
+	 */
 	protected StringBuilder builder;
 	//</editor-fold>
 	
 	/**
-	 * A terminal GUI of the Drop7 game
+	 *The main TerminalGUI for the Drop7 game.   
 	 */
 	public TerminalGame()
 	{
@@ -81,9 +87,14 @@ public class TerminalGame extends Game
 		}
 	}
 	
+	/**
+	 * Main routine. Sets up an instance of the TerminalGame for playing
+	 * Calls the menu function
+	 * @param args not used.
+	 */
 	public static void main(String[] args)
 	{
-		Game g = new TerminalGame();
+		GameGUI g = new TerminalGame();
 		g.menu();
 	}
 }

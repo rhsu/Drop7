@@ -1,20 +1,31 @@
 package terminalGame;
 
+import boardEditor.core.StaticBoards;
 import gameObjects.BoardBase;
 import gameObjects.Piece;
 import java.util.ArrayList;
 import utilities.PublicFunctions;
 
+/**
+ *A drop7 terminal game for debugging
+ * Generates an empty board for simple gameplay
+ * Prompts the user what type of piece to generate for easy debugging
+ * Previously known as Gravity Terminal
+ */
 public class TerminalGameDebugger extends TerminalGame
 {
 	Piece testPiece;
 	public TerminalGameDebugger()
 	{
 		super();
+		board = StaticBoards.getEmptyBoard();
 		board.pieceAt(5, 2).setValue(5);
 		testPiece = board.pieceAt(6, 2);
 	}
 	
+	/**
+	 * Currently in progress fucntion for testing gravity features
+	 */
 	public void GravityCheck()
 	{
 		System.out.println(board);
@@ -32,6 +43,9 @@ public class TerminalGameDebugger extends TerminalGame
 
 	}
 	
+	/**
+	 * Menu function for the TerminalGameDebugger
+	 */
 	@Override
 	public void menu()
 	{
@@ -71,12 +85,5 @@ public class TerminalGameDebugger extends TerminalGame
 				System.out.println("Invalid Entry");
 			}
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		TerminalGameDebugger g = new TerminalGameDebugger();
-		g.GravityCheck();
-		//g.menu();
 	}
 }
