@@ -202,14 +202,5 @@ public class Piece
 				return Integer.toString(this.getValue());
 		}
 	}
-
-	/**
-	 *
-	 * @param args
-	 */
-	public static void main(String[] args)
-	{
-
-	}
 }
 
