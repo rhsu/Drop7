@@ -1,6 +1,6 @@
 package terminalGame;
 
-import boardEditor.core.StaticBoards;
+import abstraction.temp.StaticAbstractBoards;
 import utilities.PublicFunctions;
 
 /**
@@ -16,7 +16,7 @@ public class SimpleTerminalGame extends TerminalGame
 	SimpleTerminalGame()
 	{
 		super();
-		board = StaticBoards.getEmptyBoard();
+		board = StaticAbstractBoards.getEmptyBoard();
 	}
 	
 	/**

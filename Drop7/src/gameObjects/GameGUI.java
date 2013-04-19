@@ -1,5 +1,7 @@
 package gameObjects;
 
+import abstraction.migration.GameBoard;
+
 /**
  * An abstract class for creating a GUI for playing the game.
  */
@@ -9,7 +11,7 @@ public abstract class GameGUI
 	/**
 	 * The board object for the Drop7 Game to be played on
 	 */
-	protected Board board;
+	protected GameBoard board;
 	//</editor-fold>
 	
 	/**
@@ -17,11 +19,11 @@ public abstract class GameGUI
 	 */
 	public GameGUI()
 	{
-		board = new Board();
+		board = new GameBoard();
 	}
 	
 	/**
-	 * An overridable 
+	 * Overridable method to display the menu
 	 */
 	public void menu()
 	{

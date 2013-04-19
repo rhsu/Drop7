@@ -6,6 +6,7 @@ import java.util.ArrayList;
 /**
  *The base board class, having to deal with retrieval functions and navigating to pieces
  */
+@Deprecated
 public class BoardBase 
 {
 	public enum Direction
