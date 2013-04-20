@@ -5,6 +5,7 @@ import utilities.PublicFunctions;
 /**
  *The basic piece object. Each piece represents a "piece" in the game.
  */
+@Deprecated
 public class Piece
 {
 	//<editor-fold defaultstate="collapsed" desc="CONSTANTS">
@@ -185,7 +186,7 @@ public class Piece
 	
 	/**
 	 *
-	 * @return
+	 * @return a string representation of the piece
 	 */
 	@Override
 	public String toString()

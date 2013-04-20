@@ -3,6 +3,9 @@ package abstraction.migration;
 import abstraction.AbstractPiece;
 import abstraction.miscellaneous.PublicFunctions;
 
+/**
+ *An implementation of AbstractPiece using PieceType as the Generic type
+ */
 public class GamePiece extends AbstractPiece<PieceType>
 {
 	//<editor-fold defaultstate="collapsed" desc="MEMBER VARIABLES">
@@ -77,6 +80,12 @@ public class GamePiece extends AbstractPiece<PieceType>
 	}
 	//</editor-fold>
 	
+	/**
+	 * Constructor 
+	 * @param t the type
+	 * @param i the horizontal index
+	 * @param j the vertical index
+	 */
 	public GamePiece(PieceType t, int i, int j)
 	{
 		super(i, j);
@@ -100,6 +109,11 @@ public class GamePiece extends AbstractPiece<PieceType>
 		}
 	}
 	
+	/**
+	 * This does not call toString on PieceType. The returned string is " " for 
+	 * empty, "#" for MYSTERY1, and "@" for MYSTERY2
+	 * @return a string representation of a GamePiece
+	 */
 	@Override
 	public String toString()
 	{

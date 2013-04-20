@@ -62,7 +62,7 @@ public class StaticBoards
 	
 	/**
 	 * This test was used to create a board of all 2s
-	 * @return 
+	 * @return something here to stop warnings
 	 */
 	static Board getTest2()
 	{

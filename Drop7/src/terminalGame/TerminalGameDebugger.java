@@ -1,43 +1,42 @@
 package terminalGame;
 
-import boardEditor.core.StaticBoards;
-import gameObjects.BoardBase;
-import gameObjects.Piece;
+import abstraction.migration.GamePiece;
+import abstraction.temp.StaticAbstractBoards;
 import java.util.ArrayList;
 import utilities.PublicFunctions;
 
 /**
  *A drop7 terminal game for debugging
- * Generates an empty board for simple gameplay
+ * Generates an empty board for simple game play
  * Prompts the user what type of piece to generate for easy debugging
  * Previously known as Gravity Terminal
  */
 public class TerminalGameDebugger extends TerminalGame
 {
-	Piece testPiece;
+	GamePiece testPiece;
 	public TerminalGameDebugger()
 	{
 		super();
-		board = StaticBoards.getEmptyBoard();
+		board = StaticAbstractBoards.getEmptyBoard();
 		board.pieceAt(5, 2).setValue(5);
 		testPiece = board.pieceAt(6, 2);
 	}
 	
 	/**
-	 * Currently in progress fucntion for testing gravity features
+	 * Currently in progress function for testing gravity features
 	 */
 	public void GravityCheck()
 	{
 		System.out.println(board);
 		
-		ArrayList<Piece> column = board.getAllInColumn(testPiece);
+		ArrayList<GamePiece> column = board.getAllInColumn(testPiece);
 		
-		for(Piece p : column)
+		for(GamePiece p : column)
 		{
-			Piece bottom = board.getDownPiece(p);
+			GamePiece bottom = board.getDownPiece(p);
 			if(bottom != null)
 			{
-				board.move(p, BoardBase.Direction.DOWN);
+				//board.move(p, BoardBase.Direction.DOWN);
 			}
 		}
 

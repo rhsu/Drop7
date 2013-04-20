@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  *A super class of Board Base, which contains methods having to do with the game.
  */
+@Deprecated
 public class Board extends BoardBase
 {    
 	/**
