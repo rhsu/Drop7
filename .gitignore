@@ -1,5 +1,5 @@
 dist
 build
-/Test/nbproject/private/
-/Drop7/nbproject/private/
-/Board/nbproject/private/
+/Test/nbproject/private/*
+/Drop7/nbproject/private/*
+/Board/nbproject/private/*
