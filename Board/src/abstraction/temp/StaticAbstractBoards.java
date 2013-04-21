@@ -1,7 +1,7 @@
 package abstraction.temp;
 
-import abstraction.migration.GameBoard;
-import abstraction.migration.PieceType;
+import migration.GameBoard;
+import migration.PieceType;
 
 public class StaticAbstractBoards 
 {

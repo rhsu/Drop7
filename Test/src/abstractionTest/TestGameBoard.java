@@ -1,8 +1,8 @@
 package abstractionTest;
 
-import abstraction.*;
-import abstraction.migration.*;
 import abstraction.temp.StaticAbstractBoards;
+import migration.GameBoard;
+import migration.GamePiece;
 
 public class TestGameBoard 
 {

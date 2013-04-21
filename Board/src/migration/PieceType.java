@@ -1,4 +1,4 @@
-package abstraction.migration;
+package migration;
 
 /**
  *

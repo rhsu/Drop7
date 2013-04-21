@@ -1,8 +1,8 @@
 package terminalGame;
 
-import abstraction.migration.GamePiece;
 import abstraction.temp.StaticAbstractBoards;
 import java.util.ArrayList;
+import migration.GamePiece;
 import utilities.PublicFunctions;
 
 /**

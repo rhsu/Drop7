@@ -1,9 +1,9 @@
 package abstractionTest;
 
-import abstraction.migration.GameBoard;
-import abstraction.miscellaneous.PublicFunctions;
 import abstraction.temp.StaticAbstractBoards;
 import java.util.Scanner;
+import migration.GameBoard;
+import utilities.PublicFunctions;
 
 /**
  *

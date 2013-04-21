@@ -1,6 +1,6 @@
 package gameObjects;
 
-import abstraction.migration.GameBoard;
+import migration.GameBoard;
 
 /**
  * An abstract class for creating a GUI for playing the game.
