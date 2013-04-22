@@ -3,7 +3,7 @@ Drop7
 
 This is the project directory of Drop7, a mobile game available on android and iphone.
 
-For more information: [source of this content](http://en.wikipedia.org/wiki/Drop7)
+For more information: [Drop7 wikipedia page](http://en.wikipedia.org/wiki/Drop7)
 
 This project contains the following subprojects:
 
