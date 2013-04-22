@@ -1,7 +1,7 @@
 package boardEditor.core;
 
-import migration.GameBoard;
-import migration.PieceType;
+import newGameObjects.GameBoard;
+import newGameObjects.PieceType;
 
 public class StaticBoards 
 {

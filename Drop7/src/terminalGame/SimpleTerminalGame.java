@@ -1,7 +1,7 @@
 package terminalGame;
 
 import boardEditor.core.StaticBoards;
-import utilities2.PublicFunctions;
+import utilities.PublicFunctions;
 
 /**
  *The terminal game for simple game play.

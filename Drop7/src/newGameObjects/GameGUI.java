@@ -1,6 +1,4 @@
-package oldGameObjects;
-
-import migration.GameBoard;
+package newGameObjects;
 
 /**
  * An abstract class for creating a GUI for playing the game.

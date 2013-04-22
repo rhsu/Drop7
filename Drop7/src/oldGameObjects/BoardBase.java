@@ -1,7 +1,6 @@
 package oldGameObjects;
 
 import java.util.ArrayList;
-import utilities2.PublicFunctions;
 
 /**
  *The base board class, having to deal with retrieval functions and navigating to pieces
