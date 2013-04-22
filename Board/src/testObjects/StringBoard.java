@@ -1,4 +1,4 @@
-package abstraction.testObjects;
+package testObjects;
 
 /*public class StringBoard extends AbstractBoard<String>
 {

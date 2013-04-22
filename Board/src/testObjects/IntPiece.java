@@ -1,4 +1,4 @@
-package abstraction.testObjects;
+package testObjects;
 
 /*import abstraction.AbstractPiece;
 
