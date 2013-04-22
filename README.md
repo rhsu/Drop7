@@ -1,10 +1,16 @@
 Drop7
-=====
-This if the project directory of Drop7.
+================================
 
-Drop7 has been conslidated into two projects with a third project coming soon.
+This is the project directory of Drop7, a mobile game available on android and iphone.
 
-The projects include.
-1. Drop7: A java implementation of the Drop7 game.
-2. Test: A project to test stff
-3. Coming soon...
+For more information: [source of this content](http://en.wikipedia.org/wiki/Drop7)
+
+This project contains the following subprojects:
+
+* Board: a 2D array wrapper class
+* Drop7: the main project
+
+Board
+================================
+
+A wrapper class for a 2D array of objects (implemented as a generic). This is being redesigned as a separate project.
