@@ -1,8 +1,8 @@
 package abstractionTest;
 
 import boardEditor.core.StaticBoards;
-import migration.GameBoard;
-import migration.GamePiece;
+import newGameObjects.GameBoard;
+import newGameObjects.GamePiece;
 
 public class TestGameBoard 
 {

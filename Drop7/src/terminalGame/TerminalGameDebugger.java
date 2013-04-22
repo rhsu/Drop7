@@ -2,7 +2,7 @@ package terminalGame;
 
 import boardEditor.core.StaticBoards;
 import java.util.ArrayList;
-import migration.GamePiece;
+import newGameObjects.GamePiece;
 import utilities2.PublicFunctions;
 
 /**

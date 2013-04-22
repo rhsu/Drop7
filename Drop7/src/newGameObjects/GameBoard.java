@@ -1,4 +1,4 @@
-package migration;
+package newGameObjects;
 
 import board.AbstractBoard;
 import java.util.ArrayList;
