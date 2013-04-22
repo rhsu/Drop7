@@ -1,7 +1,7 @@
 package newGameObjects;
 
 import board.AbstractPiece;
-import utilities2.PublicFunctions;
+import utilities.PublicFunctions;
 
 /**
  *An implementation of AbstractPiece using PieceType as the Generic type

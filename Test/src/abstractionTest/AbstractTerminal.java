@@ -3,7 +3,7 @@ package abstractionTest;
 import boardEditor.core.StaticBoards;
 import java.util.Scanner;
 import newGameObjects.GameBoard;
-import utilities2.PublicFunctions;
+import utilities.PublicFunctions;
 
 /**
  *

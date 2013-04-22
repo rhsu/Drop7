@@ -1,7 +1,7 @@
 package terminalGame;
 
 import newGameObjects.GameGUI;
-import utilities2.PublicFunctions;
+import utilities.PublicFunctions;
 import java.util.Scanner;
 
 public class TerminalGame extends GameGUI

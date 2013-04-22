@@ -3,7 +3,7 @@ package terminalGame;
 import boardEditor.core.StaticBoards;
 import java.util.ArrayList;
 import newGameObjects.GamePiece;
-import utilities2.PublicFunctions;
+import utilities.PublicFunctions;
 
 /**
  *A drop7 terminal game for debugging
