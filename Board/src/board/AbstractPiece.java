@@ -1,4 +1,4 @@
-package abstraction;
+package board;
 
 /**
  * The abstract piece class to compliment the abstract board class.

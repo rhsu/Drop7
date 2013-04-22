@@ -1,6 +1,6 @@
-package abstraction.testObjects;
+package testObjects;
 
-import abstraction.AbstractPiece;
+/*import abstraction.AbstractPiece;
 
 public class IntPiece extends AbstractPiece<Integer>
 {
@@ -15,4 +15,4 @@ public class IntPiece extends AbstractPiece<Integer>
 		IntPiece a = new IntPiece(5, 6);
 		System.out.println(a);
 	}
-}
+}*/

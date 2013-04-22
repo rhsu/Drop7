@@ -1,6 +1,6 @@
 package terminalGame;
 
-import gameObjects.GameGUI;
+import oldGameObjects.GameGUI;
 import java.util.Scanner;
 
 public class TerminalGameMain 

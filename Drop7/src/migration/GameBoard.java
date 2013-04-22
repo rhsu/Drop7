@@ -1,6 +1,6 @@
-package abstraction.migration;
+package migration;
 
-import abstraction.AbstractBoard;
+import board.AbstractBoard;
 import java.util.ArrayList;
 
 /**

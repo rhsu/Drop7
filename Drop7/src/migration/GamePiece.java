@@ -1,7 +1,7 @@
-package abstraction.migration;
+package migration;
 
-import abstraction.AbstractPiece;
-import abstraction.miscellaneous.PublicFunctions;
+import board.AbstractPiece;
+import utilities2.PublicFunctions;
 
 /**
  *An implementation of AbstractPiece using PieceType as the Generic type

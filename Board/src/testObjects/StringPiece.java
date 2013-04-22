@@ -1,6 +1,6 @@
-package abstraction.testObjects;
+package testObjects;
 
-import abstraction.AbstractPiece;
+/*import abstraction.AbstractPiece;
 
 public class StringPiece extends AbstractPiece<String>
 {
@@ -8,4 +8,4 @@ public class StringPiece extends AbstractPiece<String>
 	{
 		super(i, j);
 	}
-}
+}*/

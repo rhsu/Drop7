@@ -1,15 +1,15 @@
 package abstractionTest;
 
-import abstraction.*;
-import abstraction.migration.*;
-import abstraction.temp.StaticAbstractBoards;
+import boardEditor.core.StaticBoards;
+import migration.GameBoard;
+import migration.GamePiece;
 
 public class TestGameBoard 
 {
 	public static void main(String... args)
 	{
 		//Let's use abstract board and see where it breaks
-		GameBoard b = StaticAbstractBoards.getEmptyBoard();
+		GameBoard b = StaticBoards.getEmptyBoard();
 		
 		b.pieceAt(1, 1).setValue(1);
 		b.pieceAt(2, 1).setValue(2);

@@ -1,9 +1,9 @@
 package terminalGame;
 
-import abstraction.migration.GamePiece;
-import abstraction.temp.StaticAbstractBoards;
+import boardEditor.core.StaticBoards;
 import java.util.ArrayList;
-import utilities.PublicFunctions;
+import migration.GamePiece;
+import utilities2.PublicFunctions;
 
 /**
  *A drop7 terminal game for debugging
@@ -17,7 +17,7 @@ public class TerminalGameDebugger extends TerminalGame
 	public TerminalGameDebugger()
 	{
 		super();
-		board = StaticAbstractBoards.getEmptyBoard();
+		board = StaticBoards.getEmptyBoard();
 		board.pieceAt(5, 2).setValue(5);
 		testPiece = board.pieceAt(6, 2);
 	}

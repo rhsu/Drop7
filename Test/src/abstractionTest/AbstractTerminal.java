@@ -1,9 +1,9 @@
 package abstractionTest;
 
-import abstraction.migration.GameBoard;
-import abstraction.miscellaneous.PublicFunctions;
-import abstraction.temp.StaticAbstractBoards;
+import boardEditor.core.StaticBoards;
 import java.util.Scanner;
+import migration.GameBoard;
+import utilities2.PublicFunctions;
 
 /**
  *
@@ -16,7 +16,7 @@ public class AbstractTerminal
 	
 	public AbstractTerminal()
 	{
-		board = StaticAbstractBoards.getEmptyBoard();
+		board = StaticBoards.getEmptyBoard();
 		scanner = new Scanner(System.in);
 		builder = new StringBuilder();
 	}

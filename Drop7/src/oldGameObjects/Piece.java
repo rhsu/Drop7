@@ -1,6 +1,6 @@
-package gameObjects;
+package oldGameObjects;
 
-import utilities.PublicFunctions;
+import utilities2.PublicFunctions;
 
 /**
  *The basic piece object. Each piece represents a "piece" in the game.

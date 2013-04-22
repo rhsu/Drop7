@@ -1,7 +1,7 @@
-package gameObjects;
+package oldGameObjects;
 
-import utilities.PublicFunctions;
 import java.util.ArrayList;
+import utilities2.PublicFunctions;
 
 /**
  *The base board class, having to deal with retrieval functions and navigating to pieces
@@ -283,10 +283,12 @@ public class BoardBase
 	 */
 	public Piece pieceAt(int i, int j)
 	{
-		if(PublicFunctions.isValidIndex(i) && PublicFunctions.isValidIndex(j))
+		//TODO: Fix this
+		/*if(PublicFunctions.isValidIndex(i) && PublicFunctions.isValidIndex(j))	
 		{
 			return board[i][j];
-		}
+		}*/
+	
 		return null;
 	}
 	

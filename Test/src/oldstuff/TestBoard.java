@@ -1,7 +1,7 @@
 package oldstuff;
 
-import gameObjects.Board;
-import gameObjects.Piece;
+import oldGameObjects.Board;
+import oldGameObjects.Piece;
 import java.util.ArrayList;
 import java.util.Scanner;
 
