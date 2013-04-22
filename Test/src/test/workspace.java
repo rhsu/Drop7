@@ -1,7 +1,7 @@
 package test;
 
-import gameObjects.Board;
-import gameObjects.Piece;
+import oldGameObjects.Board;
+import oldGameObjects.Piece;
 
 
 public class workspace 

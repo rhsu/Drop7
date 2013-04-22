@@ -1,7 +1,7 @@
 package migration;
 
 import board.AbstractPiece;
-import utilities.PublicFunctions;
+import utilities2.PublicFunctions;
 
 /**
  *An implementation of AbstractPiece using PieceType as the Generic type

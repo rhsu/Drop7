@@ -1,14 +1,14 @@
 package test;
 
 import boardEditor.core.StaticBoards;
-import gameObjects.*;
+import migration.GameBoard;
+import migration.GamePiece;
 
 public class testMove 
 {
-	@SuppressWarnings("empty-statement")
 	public static void main(String... args)
 	{
-		Board b = StaticBoards.getEmptyBoard();
+		GameBoard b = StaticBoards.getEmptyBoard();
 		
 		b.pieceAt(0, 2).setValue(1);
 		b.pieceAt(1, 2).setValue(2);
@@ -22,7 +22,7 @@ public class testMove
 				
 		System.out.println(b.getAllInColumn(b.pieceAt(4,2)));
 		
-		for(Piece p : b.getAllInColumn(b.pieceAt(4, 2)))
+		for(GamePiece p : b.getAllInColumn(b.pieceAt(4, 2)))
 		{
 			/*if(p.getValue() == 2)
 			{
@@ -30,7 +30,7 @@ public class testMove
 				System.out.println(p.getType());
 				System.out.println(b.getDownPiece(p));
 			}*/
-			b.move(p, BoardBase.Direction.DOWN);
+			//b.move(p, BoardBase.Direction.DOWN);
 		}
 		
 		System.out.println(b);

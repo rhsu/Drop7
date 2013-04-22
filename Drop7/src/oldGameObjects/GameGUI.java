@@ -1,4 +1,4 @@
-package gameObjects;
+package oldGameObjects;
 
 import migration.GameBoard;
 
