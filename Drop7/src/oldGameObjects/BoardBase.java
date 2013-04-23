@@ -281,13 +281,7 @@ public class BoardBase
 	 * @return The piece from the board. Null if no piece exists
 	 */
 	public Piece pieceAt(int i, int j)
-	{
-		//TODO: Fix this
-		/*if(PublicFunctions.isValidIndex(i) && PublicFunctions.isValidIndex(j))	
-		{
-			return board[i][j];
-		}*/
-	
+	{	
 		return null;
 	}
 	

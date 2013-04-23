@@ -244,4 +244,20 @@ public class GameBoard extends AbstractBoard<GamePiece>
 		}
 	}
 
+	public boolean move(GamePiece p, Direction direction)
+	{
+		int value = p.getValue();
+		GamePiece bottom = getDownPiece(p);
+		while((bottom != null) && (bottom.getType() == PieceType.EMPTY))
+		{
+			/*if(value == 2) 
+			{
+				System.out.println("here");
+			}*/
+			p.setType(PieceType.EMPTY);
+			bottom.setValue(value);	
+			//System.out.println(bottom);
+		}
+		return false;
+	}
 }
