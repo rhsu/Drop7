@@ -254,10 +254,34 @@ public class GameBoard extends AbstractBoard<GamePiece>
 			{
 				System.out.println("here");
 			}*/
+			System.out.println("move is wrong?");
 			p.setType(PieceType.EMPTY);
 			bottom.setValue(value);	
 			//System.out.println(bottom);
 		}
 		return false;
+	}
+	
+		/**
+	 * Currently in progress function for testing gravity features
+	 */
+	public void GravityCheck()
+	{
+		GamePiece testPiece = pieceAt(3,3);
+		
+		ArrayList<GamePiece> column = getAllInColumn(testPiece);
+		
+		//for(GamePiece p : column)
+		//{
+		
+		System.out.println("here");
+		GamePiece bottom = getDownPiece(testPiece);
+		while(getDownPiece(testPiece) != null)
+		{
+			move(testPiece, Direction.DOWN);
+			System.out.println("here");
+			testPiece = getDownPiece(testPiece);
+		}
+		//}
 	}
 }

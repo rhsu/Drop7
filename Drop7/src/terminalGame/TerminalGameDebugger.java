@@ -34,26 +34,7 @@ public class TerminalGameDebugger extends TerminalGame
 		board.pieceAt(i, j).setValue(v);
 		return board.pieceAt(i, j);
 	}
-	
-	/**
-	 * Currently in progress function for testing gravity features
-	 */
-	public void GravityCheck()
-	{
-		System.out.println(board);
 		
-		ArrayList<GamePiece> column = board.getAllInColumn(testPiece);
-		
-		for(GamePiece p : column)
-		{
-			GamePiece bottom = board.getDownPiece(p);
-			if(bottom != null)
-			{
-				//board.move(p, BoardBase.Direction.DOWN);
-			}
-		}
-	}
-	
 	/**
 	 * Menu function for the TerminalGameDebugger
 	 */
