@@ -2,6 +2,7 @@ package terminalGame;
 
 import boardEditor.core.StaticBoards;
 import java.util.ArrayList;
+import newGameObjects.GameBoard;
 import newGameObjects.GamePiece;
 import utilities.PublicFunctions;
 
@@ -14,12 +15,24 @@ import utilities.PublicFunctions;
 public class TerminalGameDebugger extends TerminalGame
 {
 	GamePiece testPiece;
+	
+	public GameBoard getBoard()
+	{
+		return board;
+	}
+	
 	public TerminalGameDebugger()
 	{
 		super();
 		board = StaticBoards.getEmptyBoard();
 		board.pieceAt(5, 2).setValue(5);
 		testPiece = board.pieceAt(6, 2);
+	}
+	
+	public GamePiece setPiece(int i, int j, int v)
+	{
+		board.pieceAt(i, j).setValue(v);
+		return board.pieceAt(i, j);
 	}
 	
 	/**
@@ -39,7 +52,6 @@ public class TerminalGameDebugger extends TerminalGame
 				//board.move(p, BoardBase.Direction.DOWN);
 			}
 		}
-
 	}
 	
 	/**

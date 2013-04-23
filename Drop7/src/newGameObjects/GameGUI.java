@@ -21,7 +21,7 @@ public abstract class GameGUI
 	}
 	
 	/**
-	 * Overridable method to display the menu
+	 * Over ridable method to display the menu
 	 */
 	public void menu()
 	{
