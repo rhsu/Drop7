@@ -17,7 +17,7 @@ public abstract class GameGUI
 	 */
 	public GameGUI()
 	{
-		board = new GameBoard();
+		board = new GameBoard(7,7);
 	}
 	
 	/**

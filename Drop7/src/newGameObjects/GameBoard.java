@@ -162,12 +162,13 @@ public class GameBoard extends AbstractBoard<GamePiece>
 	/**
 	 *Constructor.
 	 */
-	public GameBoard()
+	public GameBoard(int h, int v)
 	{
-		board = new GamePiece[7][7];
-		for(int i = 0; i < 7; i++)
+		super(h,v);
+		board = new GamePiece[h][v];
+		for(int i = 0; i < h; i++)
 		{
-			for(int j = 0; j < 7; j++)
+			for(int j = 0; j < v; j++)
 			{
 				board[i][j] = (i < 6) ? new GamePiece(PieceType.EMPTY, i, j) 
 						: new GamePiece(PieceType.SET, i, j);

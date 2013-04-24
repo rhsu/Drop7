@@ -11,7 +11,7 @@ public class StaticBoards
 	 */
 	public static GameBoard getEmptyBoard()
 	{
-		GameBoard b = new GameBoard();
+		GameBoard b = new GameBoard(7,7);
 		for(int i = 0; i < 7; i++)
 		{
 			b.pieceAt(6, i).setType(PieceType.EMPTY);
@@ -25,7 +25,7 @@ public class StaticBoards
 	 */
 	static GameBoard getConsecutiveBoard()
 	{
-		GameBoard b = new GameBoard();
+		GameBoard b = new GameBoard(7,7);
 		for(int i = 0; i < 7; i++)
 		{
 			b.pieceAt(6, i).setValue(i + 1);
@@ -39,7 +39,7 @@ public class StaticBoards
 	 */
 	static GameBoard getTest1()
 	{
-		GameBoard b = new GameBoard();
+		GameBoard b = new GameBoard(7,7);
 		for(int i = 0; i < 7; i++)
 		{
 			b.pieceAt(6, i).setValue(i + 1);
@@ -63,7 +63,7 @@ public class StaticBoards
 	 */
 	static GameBoard getTest2()
 	{
-		GameBoard b = new GameBoard();
+		GameBoard b = new GameBoard(7,7);
 		for (int i = 0; i< 7; i++)
 		{
 			b.pieceAt(6,i).setValue(2);
