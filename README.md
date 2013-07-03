@@ -7,10 +7,6 @@ For more information: [Drop7 wikipedia page](http://en.wikipedia.org/wiki/Drop7)
 
 This project contains the following subprojects:
 
-* Board: a 2D array wrapper class
 * Drop7: the main project
-
-Board
-================================
-
-A wrapper class for a 2D array of objects (implemented as a generic). This is being redesigned as a separate project.
+* Board.jar: see the Board Repository for more information
+* Test: a test project for testing things.
